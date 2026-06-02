@@ -710,9 +710,10 @@
                         <option value="trojan">Trojan</option>
                     </select></div>
                 <div class="form-group"><label id="lbl-ui-points">Points:</label><input type="number" id="update-points"
-                        placeholder="e.g., 10 or -5"></div>
+                        placeholder="e.g., 10 or -5" onkeypress="if(event.key === 'Enter') submitPoints()"></div>
                 <div class="form-group"><label id="lbl-ui-student">Student Name (Optional):</label><input type="text"
-                        id="update-student" placeholder="Enter student name"></div>
+                        id="update-student" placeholder="Enter student name"
+                        onkeypress="if(event.key === 'Enter') submitPoints()"></div>
                 <div class="form-group"><label id="lbl-ui-category">Category (Required):</label><select
                         id="update-category" onchange="handleCategoryChange()"></select></div>
                 <div class="form-group" id="competition-group" style="display: none;"><label
@@ -755,9 +756,9 @@
             <div class="settings-grid">
 
                 <div class="settings-card">
-                    <h3>Weekly Reset Cycle</h3>
-                    <p class="hint-text" style="margin-top:0;">Define when the rolling "Last Week" leaderboard cuts off.
-                    </p>
+                    <h3>Leaderboard Reset Schedule</h3>
+                    <p class="hint-text" style="margin-top:0;">Choose exactly when the "Last Week" leaderboard takes its
+                        snapshot. It will display the previous 7 days of points up until this exact moment.</p>
                     <div class="form-group">
                         <label>Reset Day of the Week:</label>
                         <select id="set-week-end">
@@ -776,8 +777,9 @@
                 </div>
 
                 <div class="settings-card">
-                    <h3>Form Field Labels</h3>
-                    <p class="hint-text" style="margin-top:0;">Rename the default fields shown on the Update page.</p>
+                    <h3>Rename Default Form Fields</h3>
+                    <p class="hint-text" style="margin-top:0;">Customize the text displayed next to the standard inputs
+                        on the 'Log Activity' page to match your school's vocabulary.</p>
                     <div class="form-group"><label>Date Field Name:</label><input type="text" id="set-lbl-date"></div>
                     <div class="form-group"><label>House Field Name:</label><input type="text" id="set-lbl-house"></div>
                     <div class="form-group"><label>Points Field Name:</label><input type="text" id="set-lbl-points">
@@ -792,12 +794,13 @@
                 </div>
 
                 <div class="settings-card">
-                    <h3>Custom Fields <span style="font-size:12px; font-weight:normal; color:#666;">(Drag ☰ to
-                            reorder)</span></h3>
-                    <p class="hint-text" style="margin-top:0;">Add text, number, or date inputs. Sequence determines
-                        display order.</p>
+                    <h3>Create Extra Tracking Fields <span style="font-size:12px; font-weight:normal; color:#666;">(Drag
+                            ☰ to reorder)</span></h3>
+                    <p class="hint-text" style="margin-top:0;">Add new input boxes to the 'Log Activity' form (like
+                        "Grade" or "Teacher Name"). Drag the ☰ icon to change the order they appear on the screen.</p>
                     <div class="inline-add">
-                        <input type="text" id="new-custom-field" placeholder="Field name...">
+                        <input type="text" id="new-custom-field" placeholder="Field name..."
+                            onkeypress="if(event.key === 'Enter') addCustomField()">
                         <select id="new-custom-type" style="max-width: 90px;">
                             <option value="text">Text</option>
                             <option value="number">Number</option>
@@ -818,11 +821,12 @@
                 </div>
 
                 <div class="settings-card">
-                    <h3>Categories List</h3>
-                    <p class="hint-text" style="margin-top:0;">Any category containing "Competition" activates the
-                        sub-menu.</p>
-                    <div class="inline-add"><input type="text" id="new-category"
-                            placeholder="Add new category..."><button class="btn btn-primary"
+                    <h3>Manage Activity Categories</h3>
+                    <p class="hint-text" style="margin-top:0;">Define the main groups for awarding points. (Note: Any
+                        category containing the word "Competition" will automatically reveal the Competitions dropdown
+                        list).</p>
+                    <div class="inline-add"><input type="text" id="new-category" placeholder="Add new category..."
+                            onkeypress="if(event.key === 'Enter') addCategory()"><button class="btn btn-primary"
                             onclick="addCategory()">Add</button></div>
                     <table style="margin-bottom: 0;">
                         <tbody id="settings-cat-body"></tbody>
@@ -830,9 +834,11 @@
                 </div>
 
                 <div class="settings-card">
-                    <h3>Competitions List</h3>
-                    <div class="inline-add"><input type="text" id="new-competition"
-                            placeholder="Add new competition..."><button class="btn btn-primary"
+                    <h3>Manage Competitions List</h3>
+                    <p class="hint-text" style="margin-top:0;">Add specific events (like "Debate" or "Sports Day").
+                        These only appear when a user selects a Competition category.</p>
+                    <div class="inline-add"><input type="text" id="new-competition" placeholder="Add new competition..."
+                            onkeypress="if(event.key === 'Enter') addCompetition()"><button class="btn btn-primary"
                             onclick="addCompetition()">Add</button></div>
                     <table style="margin-bottom: 0;">
                         <tbody id="settings-comp-body"></tbody>
@@ -847,20 +853,16 @@
             <div class="footer-section">
                 <h4>Quick Links</h4>
                 <a href="https://iconpublicschools.org" target="_blank">School Website</a>
-                <a href="#" target="_blank">Icon Robotics Club Store</a>
+                <a href="https://ajayicon10-debug.github.io/school-club-store/" target="_blank">Icon Robotics Club Store</a>
             </div>
-            <div class="footer-section">
-                <h4>Connect With Us</h4>
-                <a href="#" target="_blank">Instagram</a>
-                <a href="#" target="_blank">Facebook</a>
-            </div>
+            
             <div class="footer-section">
                 <h4>Our Location</h4>
-                <p style="margin: 0; line-height: 1.6;">The Icon Public School<br>Chhatrapati
-                    Sambhajinagar<br>Maharashtra, India</p>
+                <p style="margin: 0; line-height: 1.6;">The Icon Public School<br>Station road,
+                    Ahilyanagar<br>Maharashtra, India</p>
             </div>
         </div>
-        <div class="footer-bottom">Developed & Maintained by Ajay Khajindar</div>
+        <div class="footer-bottom">Developed & Maintained by Ajay Khajindar, The Icon Public School</div>
     </footer>
 
     <div id="login-modal" class="modal-overlay">
@@ -871,7 +873,8 @@
             <div class="form-group">
                 <label>Password:</label>
                 <div class="pwd-wrapper">
-                    <input type="password" id="login-password" placeholder="Enter password...">
+                    <input type="password" id="login-password" placeholder="Enter password..."
+                        onkeypress="if(event.key === 'Enter') submitLogin()">
                     <button type="button" class="pwd-toggle"
                         onclick="togglePassword('login-password', 'pwd-toggle-btn')" id="pwd-toggle-btn">👁️</button>
                 </div>
@@ -889,7 +892,8 @@
         <div class="modal-content">
             <h3>Edit Log Entry</h3>
             <input type="hidden" id="edit-id">
-            <div class="form-group"><label>Points:</label><input type="number" id="edit-points"></div>
+            <div class="form-group"><label>Points:</label><input type="number" id="edit-points"
+                    onkeypress="if(event.key === 'Enter') saveEdit()"></div>
             <div style="display: flex; gap: 10px; margin-top: 15px;">
                 <button class="btn btn-primary" onclick="saveEdit()" style="margin-top: 0;">Save</button>
                 <button class="btn btn-delete" onclick="closeModal('edit-modal')" style="width: 100%;">Cancel</button>
@@ -910,7 +914,8 @@
             <div class="form-group">
                 <label>Password:</label>
                 <div class="pwd-wrapper">
-                    <input type="password" id="user-password" placeholder="Enter password...">
+                    <input type="password" id="user-password" placeholder="Enter password..."
+                        onkeypress="if(event.key === 'Enter') saveUser()">
                     <button type="button" class="pwd-toggle" onclick="togglePassword('user-password', 'user-pwd-btn')"
                         id="user-pwd-btn">👁️</button>
                 </div>
@@ -934,7 +939,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
         import { getFirestore, collection, doc, setDoc, deleteDoc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
 
-        // 2. YOUR FIREBASE CONFIGURATION KEYS (PASTE HERE)
+        // 2. YOUR FIREBASE CONFIGURATION KEYS
         const firebaseConfig = {
             apiKey: "AIzaSyD8Wlr90FHRVG193mwL_Dwj5hoUEiysT74",
             authDomain: "icon-house-points-2fb0a.firebaseapp.com",
@@ -969,11 +974,9 @@
         window.appUsers = [];
         window.actionLogs = [];
         window.currentUser = null;
-        window.activeHouseView = null; // Tracks open details page
+        window.activeHouseView = null;
 
         // --- FIREBASE REAL-TIME LISTENERS ---
-
-        // Listen to Settings
         onSnapshot(doc(db, "settings", "main"), (docSnap) => {
             if (docSnap.exists()) {
                 const data = docSnap.data();
@@ -983,25 +986,23 @@
                 window.dynamicCompetitions = data.dynamicCompetitions || window.dynamicCompetitions;
                 window.customFields = data.customFields || window.customFields;
             } else {
-                syncSettingsToFirebase(); // Seed database on first run
+                window.syncSettingsToFirebase();
             }
             if (window.populateUpdateForm) window.populateUpdateForm();
             if (window.currentUser && window.currentUser.role === 'Administrator' && window.renderSettings) window.renderSettings();
             if (window.renderHome) window.renderHome();
         });
 
-        // Listen to Users
         onSnapshot(collection(db, "users"), (snapshot) => {
             window.appUsers = [];
             snapshot.forEach(doc => window.appUsers.push({ id: doc.id, ...doc.data() }));
-            // Inject default admin if missing
             if (!window.appUsers.some(u => u.username === 'admin')) {
                 window.appUsers.push({ id: 'default_admin', username: 'admin', password: 'Icon@#$2025', name: 'Administrator', initial: 'AD', role: 'Administrator' });
             }
             if (window.currentUser && window.currentUser.role === 'Administrator' && window.renderUsers) window.renderUsers();
+            window.checkSession();
         });
 
-        // Listen to Logs
         onSnapshot(collection(db, "logs"), (snapshot) => {
             window.actionLogs = [];
             snapshot.forEach(doc => window.actionLogs.push({ id: doc.id, ...doc.data() }));
@@ -1047,19 +1048,45 @@
             catch (e) { console.error(e); }
         };
 
-        // --- EXPOSE ALL FUNCTIONS TO WINDOW (For HTML onclick handlers) ---
-
+        // --- EXPOSE ALL FUNCTIONS TO WINDOW ---
         window.closeModal = function (modalId) { document.getElementById(modalId).style.display = 'none'; };
         window.togglePassword = function (inputId, btnId) { const p = document.getElementById(inputId); const b = document.getElementById(btnId); if (p.type === 'password') { p.type = 'text'; b.textContent = '🙈'; } else { p.type = 'password'; b.textContent = '👁️'; } };
         window.formatToDDMMYYYY = function (dateObj) { const d = String(dateObj.getDate()).padStart(2, '0'); const m = String(dateObj.getMonth() + 1).padStart(2, '0'); const y = dateObj.getFullYear(); return `${d}/${m}/${y}`; };
-
         window.openLoginModal = function () { document.getElementById('login-username').value = ''; document.getElementById('login-password').value = ''; document.getElementById('login-error').style.display = 'none'; document.getElementById('login-modal').style.display = 'flex'; };
+
+        window.checkSession = function () {
+            const storedUser = localStorage.getItem('housePointsUser');
+            if (storedUser && !window.currentUser) {
+                const parsedUser = JSON.parse(storedUser);
+                const validUser = window.appUsers.find(u => u.username === parsedUser.username);
+                if (validUser) {
+                    window.currentUser = validUser;
+                    document.getElementById('nav-update').style.display = 'block';
+                    document.getElementById('nav-history').style.display = 'block';
+                    if (window.currentUser.role === 'Administrator') {
+                        document.getElementById('nav-users').style.display = 'block';
+                        document.getElementById('nav-settings').style.display = 'block';
+                    }
+                    document.getElementById('nav-login').style.display = 'none';
+                    document.getElementById('nav-logout').style.display = 'block';
+                    const welcomeSpan = document.getElementById('welcome-message');
+                    welcomeSpan.textContent = `Welcome Ajay (${window.currentUser.name})`;
+                    welcomeSpan.style.display = 'inline';
+                } else {
+                    localStorage.removeItem('housePointsUser');
+                }
+            }
+        };
 
         window.submitLogin = function () {
             const uname = document.getElementById('login-username').value.trim(); const pwd = document.getElementById('login-password').value;
             const user = window.appUsers.find(u => u.username === uname && u.password === pwd);
             if (!user) { document.getElementById('login-error').style.display = 'block'; return; }
-            window.currentUser = user; window.closeModal('login-modal');
+
+            window.currentUser = user;
+            localStorage.setItem('housePointsUser', JSON.stringify(user));
+            window.closeModal('login-modal');
+
             document.getElementById('nav-update').style.display = 'block'; document.getElementById('nav-history').style.display = 'block';
             if (window.currentUser.role === 'Administrator') { document.getElementById('nav-users').style.display = 'block'; document.getElementById('nav-settings').style.display = 'block'; }
             document.getElementById('nav-login').style.display = 'none'; document.getElementById('nav-logout').style.display = 'block';
@@ -1069,6 +1096,7 @@
 
         window.logout = function () {
             window.currentUser = null; window.activeHouseView = null;
+            localStorage.removeItem('housePointsUser');
             ['nav-update', 'nav-history', 'nav-users', 'nav-settings', 'nav-logout', 'welcome-message'].forEach(id => document.getElementById(id).style.display = 'none');
             document.getElementById('nav-login').style.display = 'block'; window.toggleView('home-view');
         };
@@ -1090,7 +1118,7 @@
             if (!document.getElementById('update-date').value) document.getElementById('update-date').value = new Date().toISOString().split('T')[0];
             window.populateDropdowns();
             const customContainer = document.getElementById('dynamic-custom-fields-container'); customContainer.innerHTML = '';
-            window.customFields.forEach((field, index) => { customContainer.innerHTML += `<div class="form-group"><label>${field.name}:</label><input type="${field.type}" id="custom-field-${index}" placeholder="Enter ${field.name}..."></div>`; });
+            window.customFields.forEach((field, index) => { customContainer.innerHTML += `<div class="form-group"><label>${field.name}:</label><input type="${field.type}" id="custom-field-${index}" placeholder="Enter ${field.name}..." onkeypress="if(event.key === 'Enter') submitPoints()"></div>`; });
         };
 
         window.populateDropdowns = function () {
@@ -1145,7 +1173,7 @@
                 window.actionLogs.forEach(log => {
                     if (log.customData && log.customData[oldName] !== undefined) {
                         log.customData[newName.trim()] = log.customData[oldName]; delete log.customData[oldName];
-                        window.syncLogToFirebase(log); // Sync updated log
+                        window.syncLogToFirebase(log);
                     }
                 });
                 window.syncSettingsToFirebase();
@@ -1287,10 +1315,8 @@
             } else {
                 const displayLogs = [...window.actionLogs].sort((a, b) => b.timestamp - a.timestamp);
                 displayLogs.forEach(log => {
-                    if (log.house === 'system') {
-                        const colSpan = 7 + window.customFields.length;
-                        html += `<tr style="background-color: #ffebee;"><td>${log.date}</td><td colspan="${colSpan - 2}" style="color: #c62828; font-weight: bold;">⚠️ SYSTEM LOG: ${log.subCategory}</td><td>${log.author}</td></tr>`; return;
-                    }
+                    if (log.house === 'system') { return; }
+
                     const pointsClass = log.points >= 0 ? 'pos-points' : 'neg-points'; const pointsDisplay = log.points > 0 ? `+${log.points}` : log.points;
                     const fullCategoryDesc = log.subCategory ? `${log.category} - ${log.subCategory}` : log.category;
                     let authText = log.author || 'Unknown'; if (log.editedBy) { authText += `<br><small style="color:#666;">Edited by: ${log.editedBy}</small>`; }
@@ -1367,13 +1393,9 @@
             }
         };
 
-        // Fallback UI initialization if Firebase doesn't load immediately
         window.populateUpdateForm();
         window.renderHome();
 
-
     </script>
-
 </body>
-
 </html>
