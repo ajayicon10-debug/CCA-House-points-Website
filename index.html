@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,136 +16,602 @@
             --nav-bg: #2c3e50;
         }
 
-        html, body { height: 100%; margin: 0; padding: 0; }
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-color); color: var(--text-color);
-            display: flex; flex-direction: column; align-items: center;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Navigation Bar */
         nav {
-            background-color: var(--nav-bg); width: 100%; display: flex;
-            justify-content: space-between; align-items: center; padding: 8px 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0;
-            z-index: 100; box-sizing: border-box;
+            background-color: var(--nav-bg);
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-sizing: border-box;
         }
 
-        .nav-links { display: flex; flex-wrap: wrap; }
-        .user-section { display: flex; align-items: center; color: white; font-weight: bold; font-size: 14px;}
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .user-section {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
 
         nav button {
-            background: none; border: none; color: white; font-size: 15px; font-weight: bold;
-            margin: 0 5px; cursor: pointer; padding: 6px 12px; border-radius: 4px; transition: background 0.3s;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+            margin: 0 5px;
+            cursor: pointer;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background 0.3s;
         }
 
-        nav button:hover, nav button.active { background-color: rgba(255, 255, 255, 0.2); }
-        #nav-login { background-color: #4CAF50; margin-left: 10px; }
-        #nav-login:hover { background-color: #45a049; }
-        #nav-logout { background-color: #F44336; margin-left: 10px; }
+        nav button:hover,
+        nav button.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #nav-login {
+            background-color: #4CAF50;
+            margin-left: 10px;
+        }
+
+        #nav-login:hover {
+            background-color: #45a049;
+        }
+
+        #nav-logout {
+            background-color: #F44336;
+            margin-left: 10px;
+        }
 
         /* Main Container */
         .container {
-            background: white; padding: 15px 30px; border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1); width: 95%; max-width: 1200px;
-            margin-top: 15px; margin-bottom: 40px; flex: 1 0 auto; 
+            background: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 95%;
+            max-width: 1200px;
+            margin-top: 15px;
+            margin-bottom: 40px;
+            flex: 1 0 auto;
         }
 
         /* Header with Logo */
-        .header-container { display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 10px; }
-        .main-logo { height: 50px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
-        h1 { color: #2c3e50; margin: 0; font-size: 1.8em; text-align: center; }
-        h2 { text-align: center; color: #2c3e50; margin-top: 10px; margin-bottom: 15px; font-size: 1.4em; }
-        h3 { text-align: center; color: #2c3e50; margin-top: 0;}
-
-        /* Home Page - Logos & Layout */
-        .house-container { display: flex; justify-content: space-around; margin-bottom: 25px; flex-wrap: wrap; gap: 10px;}
-        .house-card { display: flex; flex-direction: column; align-items: center; font-weight: bold; cursor: pointer; transition: transform 0.2s; }
-        .house-card:hover { transform: scale(1.1); }
-        .house-logo { height: 70px; width: auto; max-width: 80px; margin-bottom: 5px; object-fit: contain; mix-blend-mode: multiply; background-color: transparent; }
-
-        /* 3-Column Dashboard Layout */
-        .dashboard-layout { display: flex; flex-direction: row; justify-content: space-between; align-items: center; gap: 20px; width: 100%; }
-        .col-left, .col-right { flex: 1; display: flex; justify-content: center; min-width: 280px; }
-        .col-center { flex: 0 0 auto; display: flex; flex-direction: column; align-items: center; position: relative; cursor: pointer; }
-        
-        @media (max-width: 900px) {
-            .dashboard-layout { flex-direction: column; }
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
         }
 
-        canvas { background-color: #eee; border-radius: 50%; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.2s; }
-        canvas:hover { transform: scale(1.02); }
+        .main-logo {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin: 0;
+            font-size: 1.8em;
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            font-size: 1.4em;
+        }
+
+        h3 {
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 0;
+        }
+
+        /* Home Page - Logos & Layout */
+        .house-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .house-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .house-card:hover {
+            transform: scale(1.1);
+        }
+
+        .house-logo {
+            height: 70px;
+            width: auto;
+            max-width: 80px;
+            margin-bottom: 5px;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            background-color: transparent;
+        }
+
+        /* 3-Column Dashboard Layout */
+        .dashboard-layout {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .col-left,
+        .col-right {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            min-width: 280px;
+        }
+
+        .col-center {
+            flex: 0 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-layout {
+                flex-direction: column;
+            }
+        }
+
+        canvas {
+            background-color: #eee;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        canvas:hover {
+            transform: scale(1.02);
+        }
 
         /* Leaderboards */
-        .leaderboard { width: 100%; max-width: 340px; background: #f8f9fa; border-radius: 8px; padding: 15px; box-shadow: inset 0 0 5px rgba(0,0,0,0.05); }
-        .leaderboard-title { text-align: center; margin-top: 0; font-size: 1.2em; color: #2c3e50; }
-        .leaderboard-subtitle { text-align: center; font-size: 0.85em; color: #666; margin-top: -10px; margin-bottom: 10px; }
-        .leaderboard-item { display: flex; justify-content: space-between; padding: 8px 12px; margin-bottom: 6px; border-radius: 4px; color: white; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); transition: all 0.3s ease; cursor: pointer; font-size: 15px; }
-        .leaderboard-item:hover { opacity: 0.9; }
-        .leaderboard-item[data-house="unicorn"] { color: #333; text-shadow: none; }
-        .is-leader { transform: scale(1.04); margin-top: 8px; margin-bottom: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); border: 2px solid #FFD700; z-index: 10; position: relative; }
+        .leaderboard {
+            width: 100%;
+            max-width: 340px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .leaderboard-title {
+            text-align: center;
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+
+        .leaderboard-subtitle {
+            text-align: center;
+            font-size: 0.85em;
+            color: #666;
+            margin-top: -10px;
+            margin-bottom: 10px;
+        }
+
+        .leaderboard-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .leaderboard-item:hover {
+            opacity: 0.9;
+        }
+
+        .leaderboard-item[data-house="unicorn"] {
+            color: #333;
+            text-shadow: none;
+        }
+
+        .is-leader {
+            transform: scale(1.04);
+            margin-top: 8px;
+            margin-bottom: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            border: 2px solid #FFD700;
+            z-index: 10;
+            position: relative;
+        }
 
         /* Forms */
-        .form-section { background: #f8f9fa; padding: 20px; border-radius: 8px; margin-bottom: 20px; border-left: 5px solid #2c3e50; max-width: 500px; margin-left: auto; margin-right: auto; }
-        .form-group { margin-bottom: 12px; display: flex; flex-direction: column; }
-        label { font-weight: bold; margin-bottom: 4px; font-size: 14px;}
-        select, input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; font-size: 15px; box-sizing: border-box; }
-        .hint-text { font-size: 12px; color: #666; margin-top: 2px; }
+        .form-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 5px solid #2c3e50;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+
+        select,
+        input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+            box-sizing: border-box;
+        }
+
+        .hint-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 2px;
+        }
 
         /* Buttons */
-        .btn { padding: 10px 20px; border: none; border-radius: 5px; font-size: 15px; cursor: pointer; font-weight: bold; transition: background 0.3s; }
-        .btn-primary { background-color: #2c3e50; color: white; width: 100%; margin-top: 10px; }
-        .btn-primary:hover { background-color: #1a252f; }
-        .btn-secondary { background-color: #6c757d; color: white; margin-bottom: 15px; }
-        .btn-small { padding: 5px 10px; font-size: 13px; margin: 0 2px; width: auto; }
-        .btn-edit { background-color: #FFC107; color: black; }
-        .btn-delete { background-color: #F44336; color: white; }
-        .btn-add-new { background-color: #4CAF50; color: white; margin-bottom: 15px; }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #2c3e50;
+            color: white;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .btn-primary:hover {
+            background-color: #1a252f;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .btn-small {
+            padding: 5px 10px;
+            font-size: 13px;
+            margin: 0 2px;
+            width: auto;
+        }
+
+        .btn-edit {
+            background-color: #FFC107;
+            color: black;
+        }
+
+        .btn-delete {
+            background-color: #F44336;
+            color: white;
+        }
+
+        .btn-add-new {
+            background-color: #4CAF50;
+            color: white;
+            margin-bottom: 15px;
+        }
 
         /* Tables & Details View */
-        table { width: 100%; border-collapse: collapse; margin-top: 5px; margin-bottom: 20px;}
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; font-size: 13px; white-space: nowrap; }
-        th { background-color: #2c3e50; color: white; }
-        tr:nth-child(even) { background-color: #f2f2f2; }
-        .pos-points { color: #4CAF50; font-weight: bold; }
-        .neg-points { color: #F44336; font-weight: bold; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 5px;
+            margin-bottom: 20px;
+        }
 
-        .details-header { display: flex; align-items: center; justify-content: center; gap: 20px; margin-bottom: 15px; }
-        .details-logo { height: 90px; width: auto; object-fit: contain; mix-blend-mode: multiply; }
-        .details-title h2 { margin: 0; font-size: 28px; }
-        .details-title h3 { margin: 5px 0 0 0; color: #666; font-size: 16px; }
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-size: 13px;
+            white-space: nowrap;
+        }
+
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .pos-points {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .neg-points {
+            color: #F44336;
+            font-weight: bold;
+        }
+
+        .details-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .details-logo {
+            height: 90px;
+            width: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+        }
+
+        .details-title h2 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        .details-title h3 {
+            margin: 5px 0 0 0;
+            color: #666;
+            font-size: 16px;
+        }
 
         /* Modals */
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 200; }
-        .modal-content { background: white; padding: 25px; border-radius: 8px; width: 90%; max-width: 400px; max-height: 90vh; overflow-y: auto;}
-        .modal-content h3 { margin-top: 0; }
-        .pwd-wrapper { display: flex; align-items: center; border: 1px solid #ccc; border-radius: 4px; background: white; }
-        .pwd-wrapper input { border: none; outline: none; flex-grow: 1; padding: 8px; }
-        .pwd-toggle { background: none; border: none; cursor: pointer; padding: 0 10px; font-size: 16px; }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 400px;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .modal-content h3 {
+            margin-top: 0;
+        }
+
+        .pwd-wrapper {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background: white;
+        }
+
+        .pwd-wrapper input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+            padding: 8px;
+        }
+
+        .pwd-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0 10px;
+            font-size: 16px;
+        }
 
         /* Settings Grid & Drag-Drop */
-        .settings-grid { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; align-items: flex-start;}
-        .settings-card { background: #f8f9fa; border-radius: 8px; padding: 15px; width: 100%; max-width: 480px; border-left: 5px solid #2c3e50; box-sizing: border-box; }
-        .settings-card h3 { text-align: left; border-bottom: 2px solid #ddd; padding-bottom: 5px; margin-bottom: 15px;}
-        .inline-add { display: flex; gap: 10px; margin-bottom: 15px; }
-        .inline-add input, .inline-add select { flex-grow: 1; margin: 0; }
-        .inline-add button { margin: 0; width: auto; padding: 8px 15px;}
-        
-        .draggable-row { cursor: grab; background: white; }
-        .draggable-row:active { cursor: grabbing; }
-        .drag-handle { color: #888; font-weight: bold; margin-right: 10px; display: inline-block; cursor: grab; font-size: 18px; }
+        .settings-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .settings-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            width: 100%;
+            max-width: 480px;
+            border-left: 5px solid #2c3e50;
+            box-sizing: border-box;
+        }
+
+        .settings-card h3 {
+            text-align: left;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+        }
+
+        .inline-add {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .inline-add input,
+        .inline-add select {
+            flex-grow: 1;
+            margin: 0;
+        }
+
+        .inline-add button {
+            margin: 0;
+            width: auto;
+            padding: 8px 15px;
+        }
+
+        .draggable-row {
+            cursor: grab;
+            background: white;
+        }
+
+        .draggable-row:active {
+            cursor: grabbing;
+        }
+
+        .drag-handle {
+            color: #888;
+            font-weight: bold;
+            margin-right: 10px;
+            display: inline-block;
+            cursor: grab;
+            font-size: 18px;
+        }
 
         /* Footer */
-        .site-footer { background-color: var(--nav-bg); color: white; width: 100%; padding: 25px 0 15px 0; flex-shrink: 0; font-size: 14px; box-shadow: 0 -4px 6px rgba(0,0,0,0.1); }
-        .footer-content { display: flex; justify-content: space-around; flex-wrap: wrap; max-width: 900px; margin: 0 auto; padding: 0 20px; gap: 20px; }
-        .footer-section { min-width: 200px; flex: 1; }
-        .footer-section h4 { color: #FFD700; margin-top: 0; margin-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.2); padding-bottom: 5px; }
-        .footer-section a { color: #ecf0f1; text-decoration: none; display: block; margin-bottom: 8px; transition: color 0.3s; }
-        .footer-section a:hover { color: #FFD700; }
-        .footer-bottom { text-align: center; padding-top: 15px; margin-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 12px; color: #bdc3c7; }
+        .site-footer {
+            background-color: var(--nav-bg);
+            color: white;
+            width: 100%;
+            padding: 25px 0 15px 0;
+            flex-shrink: 0;
+            font-size: 14px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+            gap: 20px;
+        }
+
+        .footer-section {
+            min-width: 200px;
+            flex: 1;
+        }
+
+        .footer-section h4 {
+            color: #FFD700;
+            margin-top: 0;
+            margin-bottom: 12px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            padding-bottom: 5px;
+        }
+
+        .footer-section a {
+            color: #ecf0f1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 15px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 12px;
+            color: #bdc3c7;
+        }
+
+        #firebase-alert {
+            background: #F44336;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            width: 100%;
+        }
     </style>
 </head>
+
 <body>
+
+    <div id="firebase-alert">⚠️ Firebase not connected! Please add your Config Keys at the bottom of the HTML file.
+    </div>
 
     <nav>
         <div class="nav-links">
@@ -154,7 +621,7 @@
             <button id="nav-users" onclick="toggleView('users-view')" style="display: none;">Users</button>
             <button id="nav-settings" onclick="toggleView('settings-view')" style="display: none;">Settings</button>
         </div>
-        
+
         <div class="user-section">
             <span id="welcome-message" style="display: none; margin-right: 15px;"></span>
             <button id="nav-login" onclick="openLoginModal()">Login</button>
@@ -163,23 +630,25 @@
     </nav>
 
     <div class="container">
-        
+
         <div class="header-container">
-            <img src="images/school-logo.jpeg" alt="School Logo" class="main-logo" onerror="this.style.display='none'"> 
+            <img src="images/school-logo.jpeg" alt="School Logo" class="main-logo" onerror="this.style.display='none'">
             <h1>THE ICON PUBLIC SCHOOL</h1>
         </div>
 
-        <!-- ================= HOME PAGE ================= -->
         <div id="home-view" class="view-section">
             <div class="house-container">
-                <div class="house-card" onclick="showHouseDetails('titan')"><img src="images/titan.jpeg" alt="Titan" class="house-logo"><span>Titan</span></div>
-                <div class="house-card" onclick="showHouseDetails('phoenix')"><img src="images/phoenix.jpeg" alt="Phoenix" class="house-logo"><span>Phoenix</span></div>
-                <div class="house-card" onclick="showHouseDetails('unicorn')"><img src="images/unicorn.jpeg" alt="Unicorn" class="house-logo"><span>Unicorn</span></div>
-                <div class="house-card" onclick="showHouseDetails('trojan')"><img src="images/trojan.jpeg" alt="Trojan" class="house-logo"><span>Trojan</span></div>
+                <div class="house-card" onclick="showHouseDetails('titan')"><img src="images/titan.jpeg" alt="Titan"
+                        class="house-logo"><span>Titan</span></div>
+                <div class="house-card" onclick="showHouseDetails('phoenix')"><img src="images/phoenix.jpeg"
+                        alt="Phoenix" class="house-logo"><span>Phoenix</span></div>
+                <div class="house-card" onclick="showHouseDetails('unicorn')"><img src="images/unicorn.jpeg"
+                        alt="Unicorn" class="house-logo"><span>Unicorn</span></div>
+                <div class="house-card" onclick="showHouseDetails('trojan')"><img src="images/trojan.jpeg" alt="Trojan"
+                        class="house-logo"><span>Trojan</span></div>
             </div>
 
             <div class="dashboard-layout">
-                <!-- Left: Overall Standings -->
                 <div class="col-left">
                     <div class="leaderboard">
                         <h3 class="leaderboard-title">Overall Standings</h3>
@@ -188,14 +657,13 @@
                     </div>
                 </div>
 
-                <!-- Center: Graph -->
                 <div class="col-center chart-container">
                     <canvas id="pieChart" width="260" height="260"></canvas>
-                    <p style="text-align: center; font-weight: bold; color: #666; position: absolute; top: 110px; width: 100%; display: none;" id="no-data-msg">Waiting for points...</p>
+                    <p style="text-align: center; font-weight: bold; color: #666; position: absolute; top: 110px; width: 100%; display: none;"
+                        id="no-data-msg">Waiting for points...</p>
                     <span class="hint-text" style="margin-top: 15px;">Click graph to view details</span>
                 </div>
 
-                <!-- Right: Weekly Standings -->
                 <div class="col-right">
                     <div class="leaderboard">
                         <h3 class="leaderboard-title">Last Week's Standings</h3>
@@ -206,7 +674,6 @@
             </div>
         </div>
 
-        <!-- ================= DETAILS PAGE ================= -->
         <div id="details-view" class="view-section" style="display: none;">
             <button class="btn btn-secondary" onclick="toggleView('home-view')">← Back to Home</button>
             <div class="details-header">
@@ -217,53 +684,46 @@
                 </div>
             </div>
             <h3 style="text-align: left; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Discipline Logs</h3>
-            <div style="overflow-x: auto;"><table id="detail-discipline-table"></table></div>
-            
+            <div style="overflow-x: auto;">
+                <table id="detail-discipline-table"></table>
+            </div>
+
             <h3 style="text-align: left; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Late Logs</h3>
-            <div style="overflow-x: auto;"><table id="detail-late-table"></table></div>
-            
+            <div style="overflow-x: auto;">
+                <table id="detail-late-table"></table>
+            </div>
+
             <h3 style="text-align: left; border-bottom: 2px solid #ddd; padding-bottom: 5px;">Competition Logs</h3>
-            <div style="overflow-x: auto;"><table id="detail-comp-table"></table></div>
+            <div style="overflow-x: auto;">
+                <table id="detail-comp-table"></table>
+            </div>
         </div>
 
-        <!-- ================= UPDATE POINTS PAGE ================= -->
         <div id="update-view" class="view-section" style="display: none;">
             <h2>Log Activity</h2>
             <div class="form-section">
-                <div class="form-group">
-                    <label id="lbl-ui-date">Date:</label>
-                    <input type="date" id="update-date">
-                </div>
-                <div class="form-group">
-                    <label id="lbl-ui-house">Select House:</label>
-                    <select id="update-house">
-                        <option value="titan">Titan</option><option value="phoenix">Phoenix</option><option value="unicorn">Unicorn</option><option value="trojan">Trojan</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label id="lbl-ui-points">Points:</label>
-                    <input type="number" id="update-points" placeholder="e.g., 10 or -5">
-                </div>
-                <div class="form-group">
-                    <label id="lbl-ui-student">Student Name (Optional):</label>
-                    <input type="text" id="update-student" placeholder="Enter student name">
-                </div>
-                <div class="form-group">
-                    <label id="lbl-ui-category">Category (Required):</label>
-                    <select id="update-category" onchange="handleCategoryChange()"></select>
-                </div>
-                <div class="form-group" id="competition-group" style="display: none;">
-                    <label id="lbl-ui-competition">Select Competition:</label>
-                    <select id="update-competition"></select>
+                <div class="form-group"><label id="lbl-ui-date">Date:</label><input type="date" id="update-date"></div>
+                <div class="form-group"><label id="lbl-ui-house">Select House:</label><select id="update-house">
+                        <option value="titan">Titan</option>
+                        <option value="phoenix">Phoenix</option>
+                        <option value="unicorn">Unicorn</option>
+                        <option value="trojan">Trojan</option>
+                    </select></div>
+                <div class="form-group"><label id="lbl-ui-points">Points:</label><input type="number" id="update-points"
+                        placeholder="e.g., 10 or -5"></div>
+                <div class="form-group"><label id="lbl-ui-student">Student Name (Optional):</label><input type="text"
+                        id="update-student" placeholder="Enter student name"></div>
+                <div class="form-group"><label id="lbl-ui-category">Category (Required):</label><select
+                        id="update-category" onchange="handleCategoryChange()"></select></div>
+                <div class="form-group" id="competition-group" style="display: none;"><label
+                        id="lbl-ui-competition">Select Competition:</label><select id="update-competition"></select>
                 </div>
 
                 <div id="dynamic-custom-fields-container"></div>
-
                 <button class="btn btn-primary" onclick="submitPoints()">Save Update</button>
             </div>
         </div>
 
-        <!-- ================= HISTORY PAGE ================= -->
         <div id="history-view" class="view-section" style="display: none;">
             <h2>Full Activity Log</h2>
             <div style="overflow-x: auto;">
@@ -271,59 +731,71 @@
             </div>
         </div>
 
-        <!-- ================= USERS MANAGEMENT PAGE (Admin Only) ================= -->
         <div id="users-view" class="view-section" style="display: none;">
             <h2>Manage System Users</h2>
             <button class="btn btn-add-new" onclick="openUserModal()">+ Add New User</button>
             <div style="overflow-x: auto;">
                 <table>
-                    <thead><tr><th>Name</th><th>Initial</th><th>Username</th><th>User Type</th><th>Manage</th></tr></thead>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Initial</th>
+                            <th>Username</th>
+                            <th>User Type</th>
+                            <th>Manage</th>
+                        </tr>
+                    </thead>
                     <tbody id="users-table-body"></tbody>
                 </table>
             </div>
         </div>
 
-        <!-- ================= SETTINGS PAGE (Admin Only) ================= -->
         <div id="settings-view" class="view-section" style="display: none;">
             <h2>System Settings</h2>
-            
             <div class="settings-grid">
-                
-                <!-- 0. Weekly Leaderboard Config -->
+
                 <div class="settings-card">
                     <h3>Weekly Reset Cycle</h3>
-                    <p class="hint-text" style="margin-top:0;">Define when the rolling "Last Week" leaderboard cuts off.</p>
+                    <p class="hint-text" style="margin-top:0;">Define when the rolling "Last Week" leaderboard cuts off.
+                    </p>
                     <div class="form-group">
                         <label>Reset Day of the Week:</label>
                         <select id="set-week-end">
-                            <option value="0">Sunday</option><option value="1">Monday</option><option value="2">Tuesday</option>
-                            <option value="3">Wednesday</option><option value="4">Thursday</option><option value="5">Friday</option><option value="6">Saturday</option>
+                            <option value="0">Sunday</option>
+                            <option value="1">Monday</option>
+                            <option value="2">Tuesday</option>
+                            <option value="3">Wednesday</option>
+                            <option value="4">Thursday</option>
+                            <option value="5">Friday</option>
+                            <option value="6">Saturday</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Reset Hour (24h format):</label>
-                        <input type="number" id="set-week-hour" min="0" max="23" placeholder="e.g. 23 for 11 PM">
-                    </div>
+                    <div class="form-group"><label>Reset Hour (24h format):</label><input type="number"
+                            id="set-week-hour" min="0" max="23" placeholder="e.g. 23 for 11 PM"></div>
                     <button class="btn btn-primary" onclick="saveWeekSettings()">Save Configuration</button>
                 </div>
 
-                <!-- 1. Form Labels -->
                 <div class="settings-card">
                     <h3>Form Field Labels</h3>
                     <p class="hint-text" style="margin-top:0;">Rename the default fields shown on the Update page.</p>
-                    <div class="form-group"><label>Date Field Name:</label><input type="text" id="set-lbl-date" value="Date:"></div>
-                    <div class="form-group"><label>House Field Name:</label><input type="text" id="set-lbl-house" value="Select House:"></div>
-                    <div class="form-group"><label>Points Field Name:</label><input type="text" id="set-lbl-points" value="Points:"></div>
-                    <div class="form-group"><label>Student Field Name:</label><input type="text" id="set-lbl-student" value="Student Name (Optional):"></div>
-                    <div class="form-group"><label>Category Field Name:</label><input type="text" id="set-lbl-category" value="Category (Required):"></div>
-                    <div class="form-group"><label>Competition Field Name:</label><input type="text" id="set-lbl-competition" value="Select Competition:"></div>
+                    <div class="form-group"><label>Date Field Name:</label><input type="text" id="set-lbl-date"></div>
+                    <div class="form-group"><label>House Field Name:</label><input type="text" id="set-lbl-house"></div>
+                    <div class="form-group"><label>Points Field Name:</label><input type="text" id="set-lbl-points">
+                    </div>
+                    <div class="form-group"><label>Student Field Name:</label><input type="text" id="set-lbl-student">
+                    </div>
+                    <div class="form-group"><label>Category Field Name:</label><input type="text" id="set-lbl-category">
+                    </div>
+                    <div class="form-group"><label>Competition Field Name:</label><input type="text"
+                            id="set-lbl-competition"></div>
                     <button class="btn btn-primary" onclick="saveFieldLabels()">Update Labels</button>
                 </div>
 
-                <!-- 2. Custom Additional Fields -->
                 <div class="settings-card">
-                    <h3>Custom Fields <span style="font-size:12px; font-weight:normal; color:#666;">(Drag ☰ to reorder)</span></h3>
-                    <p class="hint-text" style="margin-top:0;">Add text, number, or date inputs. The sequence here dictates their display order on forms and tables.</p>
+                    <h3>Custom Fields <span style="font-size:12px; font-weight:normal; color:#666;">(Drag ☰ to
+                            reorder)</span></h3>
+                    <p class="hint-text" style="margin-top:0;">Add text, number, or date inputs. Sequence determines
+                        display order.</p>
                     <div class="inline-add">
                         <input type="text" id="new-custom-field" placeholder="Field name...">
                         <select id="new-custom-type" style="max-width: 90px;">
@@ -334,41 +806,42 @@
                         <button class="btn btn-primary" onclick="addCustomField()">Add</button>
                     </div>
                     <table style="margin-bottom: 0;">
-                        <thead><tr><th>Name</th><th>Type</th><th style="text-align:right;">Manage</th></tr></thead>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Type</th>
+                                <th style="text-align:right;">Manage</th>
+                            </tr>
+                        </thead>
                         <tbody id="settings-custom-body"></tbody>
                     </table>
                 </div>
 
-                <!-- 3. Manage Categories -->
                 <div class="settings-card">
                     <h3>Categories List</h3>
-                    <p class="hint-text" style="margin-top:0;">Any category containing the word "Competition" automatically activates the sub-menu.</p>
-                    <div class="inline-add">
-                        <input type="text" id="new-category" placeholder="Add new category...">
-                        <button class="btn btn-primary" onclick="addCategory()">Add</button>
-                    </div>
+                    <p class="hint-text" style="margin-top:0;">Any category containing "Competition" activates the
+                        sub-menu.</p>
+                    <div class="inline-add"><input type="text" id="new-category"
+                            placeholder="Add new category..."><button class="btn btn-primary"
+                            onclick="addCategory()">Add</button></div>
                     <table style="margin-bottom: 0;">
                         <tbody id="settings-cat-body"></tbody>
                     </table>
                 </div>
 
-                <!-- 4. Manage Competitions -->
                 <div class="settings-card">
                     <h3>Competitions List</h3>
-                    <div class="inline-add">
-                        <input type="text" id="new-competition" placeholder="Add new competition...">
-                        <button class="btn btn-primary" onclick="addCompetition()">Add</button>
-                    </div>
+                    <div class="inline-add"><input type="text" id="new-competition"
+                            placeholder="Add new competition..."><button class="btn btn-primary"
+                            onclick="addCompetition()">Add</button></div>
                     <table style="margin-bottom: 0;">
                         <tbody id="settings-comp-body"></tbody>
                     </table>
                 </div>
             </div>
         </div>
-
     </div>
 
-    <!-- ================= SITE FOOTER ================= -->
     <footer class="site-footer">
         <div class="footer-content">
             <div class="footer-section">
@@ -383,27 +856,28 @@
             </div>
             <div class="footer-section">
                 <h4>Our Location</h4>
-                <p style="margin: 0; line-height: 1.6;">The Icon Public School<br>Chhatrapati Sambhajinagar<br>Maharashtra, India</p>
+                <p style="margin: 0; line-height: 1.6;">The Icon Public School<br>Chhatrapati
+                    Sambhajinagar<br>Maharashtra, India</p>
             </div>
         </div>
         <div class="footer-bottom">Developed & Maintained by Ajay Khajindar</div>
     </footer>
 
-    <!-- ================= MODALS ================= -->
-    
-    <!-- Login Modal -->
     <div id="login-modal" class="modal-overlay">
         <div class="modal-content">
             <h3>Staff Login</h3>
-            <div class="form-group"><label>Username:</label><input type="text" id="login-username" placeholder="Enter username..."></div>
+            <div class="form-group"><label>Username:</label><input type="text" id="login-username"
+                    placeholder="Enter username..."></div>
             <div class="form-group">
                 <label>Password:</label>
                 <div class="pwd-wrapper">
                     <input type="password" id="login-password" placeholder="Enter password...">
-                    <button type="button" class="pwd-toggle" onclick="togglePassword('login-password', 'pwd-toggle-btn')" id="pwd-toggle-btn">👁️</button>
+                    <button type="button" class="pwd-toggle"
+                        onclick="togglePassword('login-password', 'pwd-toggle-btn')" id="pwd-toggle-btn">👁️</button>
                 </div>
             </div>
-            <p id="login-error" style="color: red; font-size: 13px; display: none; margin: 0;">Incorrect Username or Password!</p>
+            <p id="login-error" style="color: red; font-size: 13px; display: none; margin: 0;">Incorrect Username or
+                Password!</p>
             <div style="display: flex; gap: 10px; margin-top: 15px;">
                 <button class="btn btn-primary" onclick="submitLogin()" style="margin-top: 0;">Login</button>
                 <button class="btn btn-delete" onclick="closeModal('login-modal')" style="width: 100%;">Cancel</button>
@@ -411,7 +885,6 @@
         </div>
     </div>
 
-    <!-- Edit Log Modal -->
     <div id="edit-modal" class="modal-overlay">
         <div class="modal-content">
             <h3>Edit Log Entry</h3>
@@ -424,24 +897,30 @@
         </div>
     </div>
 
-    <!-- Add/Edit User Modal -->
     <div id="user-modal" class="modal-overlay">
         <div class="modal-content">
             <h3 id="user-modal-title">Add/Edit User</h3>
             <input type="hidden" id="user-edit-id">
-            <div class="form-group"><label>Name:</label><input type="text" id="user-name" placeholder="e.g. Sarita Sharma"></div>
-            <div class="form-group"><label>Initial:</label><input type="text" id="user-initial" placeholder="e.g. SS"></div>
-            <div class="form-group"><label>Username (For Login):</label><input type="text" id="user-username" placeholder="e.g. sarita"></div>
+            <div class="form-group"><label>Name:</label><input type="text" id="user-name"
+                    placeholder="e.g. Sarita Sharma"></div>
+            <div class="form-group"><label>Initial:</label><input type="text" id="user-initial" placeholder="e.g. SS">
+            </div>
+            <div class="form-group"><label>Username (For Login):</label><input type="text" id="user-username"
+                    placeholder="e.g. sarita"></div>
             <div class="form-group">
                 <label>Password:</label>
                 <div class="pwd-wrapper">
                     <input type="password" id="user-password" placeholder="Enter password...">
-                    <button type="button" class="pwd-toggle" onclick="togglePassword('user-password', 'user-pwd-btn')" id="user-pwd-btn">👁️</button>
+                    <button type="button" class="pwd-toggle" onclick="togglePassword('user-password', 'user-pwd-btn')"
+                        id="user-pwd-btn">👁️</button>
                 </div>
             </div>
             <div class="form-group">
                 <label>User Type:</label>
-                <select id="user-role"><option value="Manager">Manager</option><option value="Administrator">Administrator</option></select>
+                <select id="user-role">
+                    <option value="Manager">Manager</option>
+                    <option value="Administrator">Administrator</option>
+                </select>
             </div>
             <div style="display: flex; gap: 10px; margin-top: 15px;">
                 <button class="btn btn-primary" onclick="saveUser()" style="margin-top: 0;">Save User</button>
@@ -450,530 +929,451 @@
         </div>
     </div>
 
-    <script>
-        // --- DATA & CONFIGURATION ---
-        const houseConfig = {
+    <script type="module">
+        // 1. Firebase Imports
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+        import { getFirestore, collection, doc, setDoc, deleteDoc, updateDoc, onSnapshot } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js";
+
+        // 2. YOUR FIREBASE CONFIGURATION KEYS (PASTE HERE)
+        const firebaseConfig = {
+            apiKey: "AIzaSyD8Wlr90FHRVG193mwL_Dwj5hoUEiysT74",
+            authDomain: "icon-house-points-2fb0a.firebaseapp.com",
+            projectId: "icon-house-points-2fb0a",
+            storageBucket: "icon-house-points-2fb0a.firebasestorage.app",
+            messagingSenderId: "401872110272",
+            appId: "1:401872110272:web:6c364b39afa1ecafae2325"
+        };
+
+        // UI Alert if keys are missing
+        if (firebaseConfig.apiKey === "YOUR_API_KEY_HERE") {
+            document.getElementById('firebase-alert').style.display = 'block';
+        }
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // --- GLOBAL APP STATE ---
+        window.houseConfig = {
             titan: { name: 'Titan', color: '#4CAF50', img: 'images/titan.jpeg' },
             phoenix: { name: 'Phoenix', color: '#2196F3', img: 'images/phoenix.jpeg' },
             unicorn: { name: 'Unicorn', color: '#FFEB3B', img: 'images/unicorn.jpeg' },
             trojan: { name: 'Trojan', color: '#F44336', img: 'images/trojan.jpeg' }
         };
 
-        // Settings Data
-        let formLabels = { date: "Date:", house: "Select House:", points: "Points:", student: "Student Name (Optional):", category: "Category (Required):", competition: "Select Competition:" };
-        let weekSettings = { resetDay: 2, resetHour: 23 }; // Default: Tuesday (2) at 23:00 (11 PM)
-        
-        let dynamicCategories = ["CCA - Discipline", "CCA - Late", "CCA - Competition"];
-        let dynamicCompetitions = ["English Elocution", "Hindi Elocution", "Story telling", "Digital poster making"];
-        let customFields = []; // e.g. [{name: "Grade", type: "text"}]
+        window.formLabels = { date: "Date:", house: "Select House:", points: "Points:", student: "Student Name (Optional):", category: "Category (Required):", competition: "Select Competition:" };
+        window.weekSettings = { resetDay: 2, resetHour: 23 };
+        window.dynamicCategories = ["CCA - Discipline", "CCA - Late", "CCA - Competition"];
+        window.dynamicCompetitions = ["English Elocution", "Hindi Elocution", "Story telling", "Digital poster making"];
+        window.customFields = [];
+        window.appUsers = [];
+        window.actionLogs = [];
+        window.currentUser = null;
+        window.activeHouseView = null; // Tracks open details page
 
-        let appUsers = [{ id: 1, username: 'admin', password: 'Icon@#$2025', name: 'Administrator', initial: 'AD', role: 'Administrator' }];
-        let actionLogs = [];
-        let currentUser = null; 
+        // --- FIREBASE REAL-TIME LISTENERS ---
 
-        // --- UTILITY ---
-        function closeModal(modalId) { document.getElementById(modalId).style.display = 'none'; }
-        function togglePassword(inputId, btnId) {
-            const pwdInput = document.getElementById(inputId); const toggleBtn = document.getElementById(btnId);
-            if (pwdInput.type === 'password') { pwdInput.type = 'text'; toggleBtn.textContent = '🙈'; } else { pwdInput.type = 'password'; toggleBtn.textContent = '👁️'; }
-        }
-        
-        function formatToDDMMYYYY(dateObj) {
-            const d = String(dateObj.getDate()).padStart(2, '0');
-            const m = String(dateObj.getMonth() + 1).padStart(2, '0');
-            const y = dateObj.getFullYear();
-            return `${d}/${m}/${y}`;
-        }
+        // Listen to Settings
+        onSnapshot(doc(db, "settings", "main"), (docSnap) => {
+            if (docSnap.exists()) {
+                const data = docSnap.data();
+                window.formLabels = data.formLabels || window.formLabels;
+                window.weekSettings = data.weekSettings || window.weekSettings;
+                window.dynamicCategories = data.dynamicCategories || window.dynamicCategories;
+                window.dynamicCompetitions = data.dynamicCompetitions || window.dynamicCompetitions;
+                window.customFields = data.customFields || window.customFields;
+            } else {
+                syncSettingsToFirebase(); // Seed database on first run
+            }
+            if (window.populateUpdateForm) window.populateUpdateForm();
+            if (window.currentUser && window.currentUser.role === 'Administrator' && window.renderSettings) window.renderSettings();
+            if (window.renderHome) window.renderHome();
+        });
 
-        // --- AUTHENTICATION LOGIC ---
-        function openLoginModal() { document.getElementById('login-username').value = ''; document.getElementById('login-password').value = ''; document.getElementById('login-error').style.display = 'none'; document.getElementById('login-modal').style.display = 'flex'; }
-        
-        function submitLogin() {
+        // Listen to Users
+        onSnapshot(collection(db, "users"), (snapshot) => {
+            window.appUsers = [];
+            snapshot.forEach(doc => window.appUsers.push({ id: doc.id, ...doc.data() }));
+            // Inject default admin if missing
+            if (!window.appUsers.some(u => u.username === 'admin')) {
+                window.appUsers.push({ id: 'default_admin', username: 'admin', password: 'Icon@#$2025', name: 'Administrator', initial: 'AD', role: 'Administrator' });
+            }
+            if (window.currentUser && window.currentUser.role === 'Administrator' && window.renderUsers) window.renderUsers();
+        });
+
+        // Listen to Logs
+        onSnapshot(collection(db, "logs"), (snapshot) => {
+            window.actionLogs = [];
+            snapshot.forEach(doc => window.actionLogs.push({ id: doc.id, ...doc.data() }));
+            if (window.renderHome) window.renderHome();
+            if (window.currentUser && window.renderHistory) window.renderHistory();
+            if (document.getElementById('details-view').style.display === 'block' && window.activeHouseView) {
+                window.showHouseDetails(window.activeHouseView);
+            }
+        });
+
+        // --- FIREBASE WRITE HELPERS ---
+        window.syncSettingsToFirebase = async function () {
+            try {
+                await setDoc(doc(db, 'settings', 'main'), {
+                    formLabels: window.formLabels, weekSettings: window.weekSettings, dynamicCategories: window.dynamicCategories,
+                    dynamicCompetitions: window.dynamicCompetitions, customFields: window.customFields
+                });
+            } catch (e) { console.error("Firebase Write Error:", e); }
+        };
+
+        window.syncLogToFirebase = async function (logEntry) {
+            try { await setDoc(doc(db, 'logs', logEntry.id.toString()), logEntry); }
+            catch (e) { alert("Error saving log."); console.error(e); }
+        };
+
+        window.deleteLogFromFirebase = async function (id) {
+            try { await deleteDoc(doc(db, 'logs', id.toString())); }
+            catch (e) { console.error(e); }
+        };
+
+        window.updateLogPointsFirebase = async function (id, newPoints, editedByStr) {
+            try { await updateDoc(doc(db, 'logs', id.toString()), { points: newPoints, editedBy: editedByStr }); }
+            catch (e) { console.error(e); }
+        };
+
+        window.syncUserToFirebase = async function (userObj) {
+            try { await setDoc(doc(db, 'users', userObj.id.toString()), userObj); }
+            catch (e) { console.error(e); }
+        };
+
+        window.deleteUserFromFirebase = async function (id) {
+            try { await deleteDoc(doc(db, 'users', id.toString())); }
+            catch (e) { console.error(e); }
+        };
+
+        // --- EXPOSE ALL FUNCTIONS TO WINDOW (For HTML onclick handlers) ---
+
+        window.closeModal = function (modalId) { document.getElementById(modalId).style.display = 'none'; };
+        window.togglePassword = function (inputId, btnId) { const p = document.getElementById(inputId); const b = document.getElementById(btnId); if (p.type === 'password') { p.type = 'text'; b.textContent = '🙈'; } else { p.type = 'password'; b.textContent = '👁️'; } };
+        window.formatToDDMMYYYY = function (dateObj) { const d = String(dateObj.getDate()).padStart(2, '0'); const m = String(dateObj.getMonth() + 1).padStart(2, '0'); const y = dateObj.getFullYear(); return `${d}/${m}/${y}`; };
+
+        window.openLoginModal = function () { document.getElementById('login-username').value = ''; document.getElementById('login-password').value = ''; document.getElementById('login-error').style.display = 'none'; document.getElementById('login-modal').style.display = 'flex'; };
+
+        window.submitLogin = function () {
             const uname = document.getElementById('login-username').value.trim(); const pwd = document.getElementById('login-password').value;
-            const user = appUsers.find(u => u.username === uname && u.password === pwd);
+            const user = window.appUsers.find(u => u.username === uname && u.password === pwd);
             if (!user) { document.getElementById('login-error').style.display = 'block'; return; }
-
-            currentUser = user; closeModal('login-modal');
+            window.currentUser = user; window.closeModal('login-modal');
             document.getElementById('nav-update').style.display = 'block'; document.getElementById('nav-history').style.display = 'block';
-            if (currentUser.role === 'Administrator') { document.getElementById('nav-users').style.display = 'block'; document.getElementById('nav-settings').style.display = 'block'; }
+            if (window.currentUser.role === 'Administrator') { document.getElementById('nav-users').style.display = 'block'; document.getElementById('nav-settings').style.display = 'block'; }
             document.getElementById('nav-login').style.display = 'none'; document.getElementById('nav-logout').style.display = 'block';
-            
-            const welcomeSpan = document.getElementById('welcome-message');
-            welcomeSpan.textContent = `Welcome, ${currentUser.name}`; welcomeSpan.style.display = 'inline';
-            populateDropdowns(); 
-        }
+            const welcomeSpan = document.getElementById('welcome-message'); welcomeSpan.textContent = `Welcome, ${window.currentUser.name}`; welcomeSpan.style.display = 'inline';
+            window.populateDropdowns();
+        };
 
-        function logout() {
-            currentUser = null;
+        window.logout = function () {
+            window.currentUser = null; window.activeHouseView = null;
             ['nav-update', 'nav-history', 'nav-users', 'nav-settings', 'nav-logout', 'welcome-message'].forEach(id => document.getElementById(id).style.display = 'none');
-            document.getElementById('nav-login').style.display = 'block';
-            toggleView('home-view');
-        }
+            document.getElementById('nav-login').style.display = 'block'; window.toggleView('home-view');
+        };
 
-        // --- NAVIGATION ---
-        function toggleView(viewId) {
+        window.toggleView = function (viewId) {
             document.querySelectorAll('.view-section').forEach(el => el.style.display = 'none');
             document.querySelectorAll('nav button').forEach(el => el.classList.remove('active'));
             document.getElementById(viewId).style.display = 'block';
-            const navBtn = document.getElementById('nav-' + viewId.split('-')[0]); if(navBtn) navBtn.classList.add('active');
+            const navBtn = document.getElementById('nav-' + viewId.split('-')[0]); if (navBtn) navBtn.classList.add('active');
+            if (viewId === 'home-view') { window.activeHouseView = null; window.renderHome(); }
+            if (viewId === 'history-view') window.renderHistory();
+            if (viewId === 'users-view') window.renderUsers();
+            if (viewId === 'settings-view') window.renderSettings();
+            if (viewId === 'update-view') window.populateUpdateForm();
+        };
 
-            if (viewId === 'home-view') renderHome();
-            if (viewId === 'history-view') renderHistory();
-            if (viewId === 'users-view') renderUsers();
-            if (viewId === 'settings-view') renderSettings();
-            if (viewId === 'update-view') populateUpdateForm();
-        }
+        window.populateUpdateForm = function () {
+            document.getElementById('lbl-ui-date').textContent = window.formLabels.date; document.getElementById('lbl-ui-house').textContent = window.formLabels.house; document.getElementById('lbl-ui-points').textContent = window.formLabels.points; document.getElementById('lbl-ui-student').textContent = window.formLabels.student; document.getElementById('lbl-ui-category').textContent = window.formLabels.category; document.getElementById('lbl-ui-competition').textContent = window.formLabels.competition;
+            if (!document.getElementById('update-date').value) document.getElementById('update-date').value = new Date().toISOString().split('T')[0];
+            window.populateDropdowns();
+            const customContainer = document.getElementById('dynamic-custom-fields-container'); customContainer.innerHTML = '';
+            window.customFields.forEach((field, index) => { customContainer.innerHTML += `<div class="form-group"><label>${field.name}:</label><input type="${field.type}" id="custom-field-${index}" placeholder="Enter ${field.name}..."></div>`; });
+        };
 
-        // --- UPDATE FORM BUILDER LOGIC ---
-        function populateUpdateForm() {
-            document.getElementById('lbl-ui-date').textContent = formLabels.date;
-            document.getElementById('lbl-ui-house').textContent = formLabels.house;
-            document.getElementById('lbl-ui-points').textContent = formLabels.points;
-            document.getElementById('lbl-ui-student').textContent = formLabels.student;
-            document.getElementById('lbl-ui-category').textContent = formLabels.category;
-            document.getElementById('lbl-ui-competition').textContent = formLabels.competition;
-
-            // Set to current date automatically
-            document.getElementById('update-date').value = new Date().toISOString().split('T')[0];
-
-            populateDropdowns();
-
-            const customContainer = document.getElementById('dynamic-custom-fields-container');
-            customContainer.innerHTML = '';
-            customFields.forEach((field, index) => {
-                customContainer.innerHTML += `<div class="form-group"><label>${field.name}:</label><input type="${field.type}" id="custom-field-${index}" placeholder="Enter ${field.name}..."></div>`;
-            });
-        }
-
-        function populateDropdowns() {
+        window.populateDropdowns = function () {
             const catSelect = document.getElementById('update-category'); const compSelect = document.getElementById('update-competition');
-            catSelect.innerHTML = '<option value="">-- Select Category --</option>'; dynamicCategories.forEach(cat => { catSelect.innerHTML += `<option value="${cat}">${cat}</option>`; });
-            compSelect.innerHTML = ''; dynamicCompetitions.forEach(comp => { compSelect.innerHTML += `<option value="${comp}">${comp}</option>`; });
-            handleCategoryChange();
-        }
+            catSelect.innerHTML = '<option value="">-- Select Category --</option>'; window.dynamicCategories.forEach(cat => { catSelect.innerHTML += `<option value="${cat}">${cat}</option>`; });
+            compSelect.innerHTML = ''; window.dynamicCompetitions.forEach(comp => { compSelect.innerHTML += `<option value="${comp}">${comp}</option>`; });
+            window.handleCategoryChange();
+        };
 
-        function handleCategoryChange() {
+        window.handleCategoryChange = function () {
             const categorySelect = document.getElementById('update-category'); const compGroup = document.getElementById('competition-group');
             if (categorySelect.value.toLowerCase().includes('competition')) { compGroup.style.display = 'flex'; } else { compGroup.style.display = 'none'; }
-        }
+        };
 
-        function logSystemAction(actionDescription) {
-            actionLogs.push({
-                id: Date.now(), timestamp: Date.now(), date: formatToDDMMYYYY(new Date()),
+        window.logSystemAction = function (actionDescription) {
+            window.syncLogToFirebase({
+                id: Date.now(), timestamp: Date.now(), date: window.formatToDDMMYYYY(new Date()),
                 house: 'system', points: 0, student: '-', category: 'System Configuration', subCategory: actionDescription, customData: {},
-                author: currentUser.name, editedBy: null
+                author: window.currentUser.name, editedBy: null
             });
-        }
+        };
 
-        // --- SETTINGS MANAGEMENT & DRAG DROP ---
-        let draggedCustomFieldIndex = null;
+        window.draggedCustomFieldIndex = null;
+        window.dragStart = function (e, idx) { window.draggedCustomFieldIndex = idx; e.dataTransfer.effectAllowed = 'move'; e.dataTransfer.setData('text/plain', idx); };
+        window.dragOver = function (e) { e.preventDefault(); e.dataTransfer.dropEffect = 'move'; };
+        window.drop = function (e, targetIdx) { e.preventDefault(); if (window.draggedCustomFieldIndex === null || window.draggedCustomFieldIndex === targetIdx) return; const item = window.customFields.splice(window.draggedCustomFieldIndex, 1)[0]; window.customFields.splice(targetIdx, 0, item); window.draggedCustomFieldIndex = null; window.renderSettings(); window.syncSettingsToFirebase(); };
 
-        function dragStart(e, idx) {
-            draggedCustomFieldIndex = idx;
-            e.dataTransfer.effectAllowed = 'move';
-            e.dataTransfer.setData('text/plain', idx); 
-        }
-        function dragOver(e) {
-            e.preventDefault();
-            e.dataTransfer.dropEffect = 'move';
-        }
-        function drop(e, targetIdx) {
-            e.preventDefault();
-            if (draggedCustomFieldIndex === null || draggedCustomFieldIndex === targetIdx) return;
-            const item = customFields.splice(draggedCustomFieldIndex, 1)[0];
-            customFields.splice(targetIdx, 0, item);
-            draggedCustomFieldIndex = null;
-            renderSettings();
-        }
+        window.renderSettings = function () {
+            document.getElementById('set-week-end').value = window.weekSettings.resetDay; document.getElementById('set-week-hour').value = window.weekSettings.resetHour;
+            document.getElementById('set-lbl-date').value = window.formLabels.date; document.getElementById('set-lbl-house').value = window.formLabels.house; document.getElementById('set-lbl-points').value = window.formLabels.points; document.getElementById('set-lbl-student').value = window.formLabels.student; document.getElementById('set-lbl-category').value = window.formLabels.category; document.getElementById('set-lbl-competition').value = window.formLabels.competition;
 
-        function renderSettings() {
-            document.getElementById('set-week-end').value = weekSettings.resetDay;
-            document.getElementById('set-week-hour').value = weekSettings.resetHour;
-
-            document.getElementById('set-lbl-date').value = formLabels.date;
-            document.getElementById('set-lbl-house').value = formLabels.house;
-            document.getElementById('set-lbl-points').value = formLabels.points;
-            document.getElementById('set-lbl-student').value = formLabels.student;
-            document.getElementById('set-lbl-category').value = formLabels.category;
-            document.getElementById('set-lbl-competition').value = formLabels.competition;
-
-            // Render Custom Fields (Draggable)
             const cfBody = document.getElementById('settings-custom-body'); cfBody.innerHTML = '';
-            customFields.forEach((cf, idx) => {
-                cfBody.innerHTML += `<tr class="draggable-row" draggable="true" ondragstart="dragStart(event, ${idx})" ondragover="dragOver(event)" ondrop="drop(event, ${idx})">
-                    <td><span class="drag-handle">☰</span>${cf.name}</td><td>${cf.type}</td><td style="text-align:right;"><button class="btn btn-small btn-edit" onclick="editCustomField(${idx})">Edit</button> <button class="btn btn-small btn-delete" onclick="deleteCustomField(${idx})">Del</button></td></tr>`;
-            });
+            window.customFields.forEach((cf, idx) => { cfBody.innerHTML += `<tr class="draggable-row" draggable="true" ondragstart="dragStart(event, ${idx})" ondragover="dragOver(event)" ondrop="drop(event, ${idx})"><td><span class="drag-handle">☰</span>${cf.name}</td><td>${cf.type}</td><td style="text-align:right;"><button class="btn btn-small btn-edit" onclick="editCustomField(${idx})">Edit</button> <button class="btn btn-small btn-delete" onclick="deleteCustomField(${idx})">Del</button></td></tr>`; });
 
-            // Generic List Renderer
             const renderList = (array, bodyId, editFunc, deleteFunc) => {
                 const body = document.getElementById(bodyId); body.innerHTML = '';
                 array.forEach((item, idx) => { body.innerHTML += `<tr><td>${item}</td><td style="text-align:right;"><button class="btn btn-small btn-edit" onclick="${editFunc}(${idx})">Edit</button> <button class="btn btn-small btn-delete" onclick="${deleteFunc}(${idx})">Del</button></td></tr>`; });
             };
-            renderList(dynamicCategories, 'settings-cat-body', 'editCategory', 'deleteCategory');
-            renderList(dynamicCompetitions, 'settings-comp-body', 'editCompetition', 'deleteCompetition');
-        }
+            renderList(window.dynamicCategories, 'settings-cat-body', 'editCategory', 'deleteCategory');
+            renderList(window.dynamicCompetitions, 'settings-comp-body', 'editCompetition', 'deleteCompetition');
+        };
 
-        function saveWeekSettings() {
-            weekSettings.resetDay = parseInt(document.getElementById('set-week-end').value);
-            let hr = parseInt(document.getElementById('set-week-hour').value);
-            if(isNaN(hr) || hr < 0 || hr > 23) hr = 23;
-            weekSettings.resetHour = hr;
-            alert("Weekly leaderboard settings updated.");
-        }
+        window.saveWeekSettings = function () { window.weekSettings.resetDay = parseInt(document.getElementById('set-week-end').value); let hr = parseInt(document.getElementById('set-week-hour').value); if (isNaN(hr) || hr < 0 || hr > 23) hr = 23; window.weekSettings.resetHour = hr; window.syncSettingsToFirebase(); alert("Weekly leaderboard settings updated."); };
+        window.saveFieldLabels = function () { window.formLabels.date = document.getElementById('set-lbl-date').value.trim() || "Date:"; window.formLabels.house = document.getElementById('set-lbl-house').value.trim() || "Select House:"; window.formLabels.points = document.getElementById('set-lbl-points').value.trim() || "Points:"; window.formLabels.student = document.getElementById('set-lbl-student').value.trim() || "Student Name (Optional):"; window.formLabels.category = document.getElementById('set-lbl-category').value.trim() || "Category (Required):"; window.formLabels.competition = document.getElementById('set-lbl-competition').value.trim() || "Select Competition:"; window.syncSettingsToFirebase(); alert("Form labels updated successfully."); };
 
-        function saveFieldLabels() {
-            formLabels.date = document.getElementById('set-lbl-date').value.trim() || "Date:";
-            formLabels.house = document.getElementById('set-lbl-house').value.trim() || "Select House:";
-            formLabels.points = document.getElementById('set-lbl-points').value.trim() || "Points:";
-            formLabels.student = document.getElementById('set-lbl-student').value.trim() || "Student Name (Optional):";
-            formLabels.category = document.getElementById('set-lbl-category').value.trim() || "Category (Required):";
-            formLabels.competition = document.getElementById('set-lbl-competition').value.trim() || "Select Competition:";
-            alert("Form labels updated successfully.");
-        }
-
-        // Custom Fields Admin
-        function addCustomField() {
-            const name = document.getElementById('new-custom-field').value.trim();
-            const type = document.getElementById('new-custom-type').value;
-            if(name && !customFields.some(f => f.name === name)) { customFields.push({name, type}); document.getElementById('new-custom-field').value = ''; renderSettings(); }
-        }
-        function editCustomField(idx) {
-            const oldName = customFields[idx].name;
-            const newName = prompt("Enter new custom field name:", oldName);
-            if(newName && newName.trim() !== "") {
-                const newType = prompt("Enter data type (text, number, date):", customFields[idx].type) || customFields[idx].type;
-                customFields[idx].name = newName.trim(); customFields[idx].type = newType.toLowerCase();
-                
-                actionLogs.forEach(log => {
-                    if(log.customData && log.customData[oldName] !== undefined) {
+        window.addCustomField = function () { const name = document.getElementById('new-custom-field').value.trim(); const type = document.getElementById('new-custom-type').value; if (name && !window.customFields.some(f => f.name === name)) { window.customFields.push({ name, type }); document.getElementById('new-custom-field').value = ''; window.syncSettingsToFirebase(); } };
+        window.editCustomField = function (idx) {
+            const oldName = window.customFields[idx].name; const newName = prompt("Enter new custom field name:", oldName);
+            if (newName && newName.trim() !== "") {
+                const newType = prompt("Enter data type (text, number, date):", window.customFields[idx].type) || window.customFields[idx].type;
+                window.customFields[idx].name = newName.trim(); window.customFields[idx].type = newType.toLowerCase();
+                window.actionLogs.forEach(log => {
+                    if (log.customData && log.customData[oldName] !== undefined) {
                         log.customData[newName.trim()] = log.customData[oldName]; delete log.customData[oldName];
+                        window.syncLogToFirebase(log); // Sync updated log
                     }
                 });
-                renderSettings(); populateUpdateForm();
+                window.syncSettingsToFirebase();
             }
-        }
-        function deleteCustomField(idx) { 
-            const field = customFields[idx].name;
-            if(confirm(`Remove custom field: ${field}? (Historical data under this column will be hidden but saved)`)) { 
-                customFields.splice(idx, 1); logSystemAction(`Removed Form Field: ${field}`); renderSettings(); 
-            } 
-        }
+        };
+        window.deleteCustomField = function (idx) { const field = window.customFields[idx].name; if (confirm(`Remove custom field: ${field}? (Historical data under this column will be hidden but saved)`)) { window.customFields.splice(idx, 1); window.logSystemAction(`Removed Form Field: ${field}`); window.syncSettingsToFirebase(); } };
 
-        // Categories & Competitions 
-        function addCategory() { const val = document.getElementById('new-category').value.trim(); if(val && !dynamicCategories.includes(val)) { dynamicCategories.push(val); document.getElementById('new-category').value = ''; renderSettings(); } }
-        function editCategory(idx) { const newVal = prompt("Enter new category name:", dynamicCategories[idx]); if(newVal && newVal.trim() !== "") { const oldVal = dynamicCategories[idx]; dynamicCategories[idx] = newVal.trim(); actionLogs.forEach(log => { if(log.category === oldVal) log.category = newVal.trim(); }); renderSettings(); populateUpdateForm(); } }
-        function deleteCategory(idx) { const cat = dynamicCategories[idx]; if(confirm(`Delete category: ${cat}?`)) { dynamicCategories.splice(idx, 1); logSystemAction(`Deleted Category: ${cat}`); renderSettings(); populateUpdateForm(); } }
+        window.addCategory = function () { const val = document.getElementById('new-category').value.trim(); if (val && !window.dynamicCategories.includes(val)) { window.dynamicCategories.push(val); document.getElementById('new-category').value = ''; window.syncSettingsToFirebase(); } };
+        window.editCategory = function (idx) { const newVal = prompt("Enter new category name:", window.dynamicCategories[idx]); if (newVal && newVal.trim() !== "") { const oldVal = window.dynamicCategories[idx]; window.dynamicCategories[idx] = newVal.trim(); window.actionLogs.forEach(log => { if (log.category === oldVal) { log.category = newVal.trim(); window.syncLogToFirebase(log); } }); window.syncSettingsToFirebase(); } };
+        window.deleteCategory = function (idx) { const cat = window.dynamicCategories[idx]; if (confirm(`Delete category: ${cat}?`)) { window.dynamicCategories.splice(idx, 1); window.logSystemAction(`Deleted Category: ${cat}`); window.syncSettingsToFirebase(); } };
 
-        function addCompetition() { const val = document.getElementById('new-competition').value.trim(); if(val && !dynamicCompetitions.includes(val)) { dynamicCompetitions.push(val); document.getElementById('new-competition').value = ''; renderSettings(); } }
-        function editCompetition(idx) { const newVal = prompt("Enter new competition name:", dynamicCompetitions[idx]); if(newVal && newVal.trim() !== "") { const oldVal = dynamicCompetitions[idx]; dynamicCompetitions[idx] = newVal.trim(); actionLogs.forEach(log => { if(log.subCategory === oldVal) log.subCategory = newVal.trim(); }); renderSettings(); populateUpdateForm(); } }
-        function deleteCompetition(idx) { const comp = dynamicCompetitions[idx]; if(confirm(`Delete competition: ${comp}?`)) { dynamicCompetitions.splice(idx, 1); logSystemAction(`Deleted Competition: ${comp}`); renderSettings(); populateUpdateForm(); } }
+        window.addCompetition = function () { const val = document.getElementById('new-competition').value.trim(); if (val && !window.dynamicCompetitions.includes(val)) { window.dynamicCompetitions.push(val); document.getElementById('new-competition').value = ''; window.syncSettingsToFirebase(); } };
+        window.editCompetition = function (idx) { const newVal = prompt("Enter new competition name:", window.dynamicCompetitions[idx]); if (newVal && newVal.trim() !== "") { const oldVal = window.dynamicCompetitions[idx]; window.dynamicCompetitions[idx] = newVal.trim(); window.actionLogs.forEach(log => { if (log.subCategory === oldVal) { log.subCategory = newVal.trim(); window.syncLogToFirebase(log); } }); window.syncSettingsToFirebase(); } };
+        window.deleteCompetition = function (idx) { const comp = window.dynamicCompetitions[idx]; if (confirm(`Delete competition: ${comp}?`)) { window.dynamicCompetitions.splice(idx, 1); window.logSystemAction(`Deleted Competition: ${comp}`); window.syncSettingsToFirebase(); } };
 
-
-        // --- CORE CALCULATIONS & RANKING ---
-        function getHouseRanks(scores) {
-            const sortedHouses = Object.entries(scores).sort((a, b) => b[1] - a[1]);
-            const ranks = {}; let currentRank = 1;
-            for (let i = 0; i < sortedHouses.length; i++) {
-                if (i > 0 && sortedHouses[i][1] < sortedHouses[i - 1][1]) currentRank++;
-                ranks[sortedHouses[i][0]] = { position: currentRank, score: sortedHouses[i][1], isLeader: currentRank === 1 && sortedHouses[i][1] > 0 };
-            }
+        window.getHouseRanks = function (scores) {
+            const sortedHouses = Object.entries(scores).sort((a, b) => b[1] - a[1]); const ranks = {}; let currentRank = 1;
+            for (let i = 0; i < sortedHouses.length; i++) { if (i > 0 && sortedHouses[i][1] < sortedHouses[i - 1][1]) currentRank++; ranks[sortedHouses[i][0]] = { position: currentRank, score: sortedHouses[i][1], isLeader: currentRank === 1 && sortedHouses[i][1] > 0 }; }
             return ranks;
-        }
+        };
 
-        function calculateCurrentScores() {
+        window.calculateCurrentScores = function () {
             let scores = { titan: 0, phoenix: 0, unicorn: 0, trojan: 0 };
-            actionLogs.sort((a, b) => a.timestamp - b.timestamp).forEach(log => {
-                if(log.house !== 'system') { scores[log.house] += log.points; if (scores[log.house] < 0) scores[log.house] = 0; }
-            });
+            window.actionLogs.sort((a, b) => a.timestamp - b.timestamp).forEach(log => { if (log.house !== 'system') { scores[log.house] += log.points; if (scores[log.house] < 0) scores[log.house] = 0; } });
             return scores;
-        }
+        };
 
-        function calculateWeeklyScores() {
-            let scores = { titan: 0, phoenix: 0, unicorn: 0, trojan: 0 };
-            let now = new Date(); 
-            
-            // Calculate the most recent cutoff point (e.g., last Tuesday at 23:00)
-            let endOfLastWeek = new Date(now);
-            let diff = now.getDay() - weekSettings.resetDay;
-            if (diff < 0) diff += 7;
-            
-            // If we are on the reset day, but haven't reached the hour yet, we need to fall back to the PREVIOUS week's reset day.
-            if (diff === 0 && now.getHours() < weekSettings.resetHour) {
-                diff = 7; 
-            }
-            
-            endOfLastWeek.setDate(endOfLastWeek.getDate() - diff);
-            endOfLastWeek.setHours(weekSettings.resetHour, 0, 0, 0);
-
-            // The window starts exactly 7 days before the cutoff
-            let startOfLastWeek = new Date(endOfLastWeek);
-            startOfLastWeek.setDate(startOfLastWeek.getDate() - 7);
-            startOfLastWeek.setSeconds(startOfLastWeek.getSeconds() + 1); // 1 second past previous cutoff
-
-            document.getElementById('weekly-date-range').textContent = `${formatToDDMMYYYY(startOfLastWeek)} to ${formatToDDMMYYYY(endOfLastWeek)}`;
-
-            actionLogs.forEach(log => {
-                if(log.house !== 'system') {
-                    if (log.timestamp >= startOfLastWeek.getTime() && log.timestamp <= endOfLastWeek.getTime()) {
-                        scores[log.house] += log.points;
-                        if (scores[log.house] < 0) scores[log.house] = 0;
-                    }
-                }
-            });
+        window.calculateWeeklyScores = function () {
+            let scores = { titan: 0, phoenix: 0, unicorn: 0, trojan: 0 }; let now = new Date();
+            let endOfLastWeek = new Date(now); let diff = now.getDay() - window.weekSettings.resetDay; if (diff < 0) diff += 7;
+            if (diff === 0 && now.getHours() < window.weekSettings.resetHour) { diff = 7; }
+            endOfLastWeek.setDate(endOfLastWeek.getDate() - diff); endOfLastWeek.setHours(window.weekSettings.resetHour, 0, 0, 0);
+            let startOfLastWeek = new Date(endOfLastWeek); startOfLastWeek.setDate(startOfLastWeek.getDate() - 7); startOfLastWeek.setSeconds(startOfLastWeek.getSeconds() + 1);
+            document.getElementById('weekly-date-range').textContent = `${window.formatToDDMMYYYY(startOfLastWeek)} to ${window.formatToDDMMYYYY(endOfLastWeek)}`;
+            window.actionLogs.forEach(log => { if (log.house !== 'system') { if (log.timestamp >= startOfLastWeek.getTime() && log.timestamp <= endOfLastWeek.getTime()) { scores[log.house] += log.points; if (scores[log.house] < 0) scores[log.house] = 0; } } });
             return scores;
-        }
+        };
 
-        function submitPoints() {
-            if (!currentUser) { alert("You must be logged in!"); return; }
-
-            const dateVal = document.getElementById('update-date').value;
-            const houseId = document.getElementById('update-house').value;
-            const pointsVal = parseInt(document.getElementById('update-points').value);
-            const studentName = document.getElementById('update-student').value.trim();
-            const category = document.getElementById('update-category').value;
-            const competition = document.getElementById('update-competition').value;
-            
-            if (!dateVal) { alert("Please select a date."); return; }
-            if (isNaN(pointsVal) || pointsVal === 0) { alert("Enter a valid number of points."); return; }
-            if (category === "") { alert("Select a Category."); return; }
-
-            let customDataObj = {};
-            customFields.forEach((field, index) => {
-                const el = document.getElementById(`custom-field-${index}`);
-                if (el) customDataObj[field.name] = el.value.trim();
-            });
-
-            // Convert HTML Date to DD/MM/YYYY and Timestamp
-            let parts = dateVal.split('-');
-            let logDateObj = new Date();
-            logDateObj.setFullYear(parts[0], parts[1]-1, parts[2]);
+        window.submitPoints = function () {
+            if (!window.currentUser) { alert("You must be logged in!"); return; }
+            const dateVal = document.getElementById('update-date').value; const houseId = document.getElementById('update-house').value; const pointsVal = parseInt(document.getElementById('update-points').value); const studentName = document.getElementById('update-student').value.trim(); const category = document.getElementById('update-category').value; const competition = document.getElementById('update-competition').value;
+            if (!dateVal) { alert("Please select a date."); return; } if (isNaN(pointsVal) || pointsVal === 0) { alert("Enter a valid number of points."); return; } if (category === "") { alert("Select a Category."); return; }
+            let customDataObj = {}; window.customFields.forEach((field, index) => { const el = document.getElementById(`custom-field-${index}`); if (el) customDataObj[field.name] = el.value.trim(); });
+            let parts = dateVal.split('-'); let logDateObj = new Date(); logDateObj.setFullYear(parts[0], parts[1] - 1, parts[2]);
 
             const logEntry = {
-                id: Date.now(),
-                timestamp: logDateObj.getTime(),
-                date: formatToDDMMYYYY(logDateObj),
+                id: Date.now(), timestamp: logDateObj.getTime(), date: window.formatToDDMMYYYY(logDateObj),
                 house: houseId, points: pointsVal, student: studentName || "-", category: category,
                 subCategory: category.toLowerCase().includes('competition') ? competition : "",
-                customData: customDataObj, author: currentUser.name, editedBy: null       
+                customData: customDataObj, author: window.currentUser.name, editedBy: null
             };
 
-            actionLogs.push(logEntry);
+            window.syncLogToFirebase(logEntry);
 
-            // Reset Form dynamically
-            document.getElementById('update-points').value = '';
-            document.getElementById('update-student').value = '';
-            document.getElementById('update-category').value = '';
-            customFields.forEach((f, idx) => { const el = document.getElementById(`custom-field-${idx}`); if(el) el.value=''; });
-            handleCategoryChange();
-            
-            alert(`Saved! ${pointsVal} points for ${houseConfig[houseId].name}.`);
-        }
+            document.getElementById('update-points').value = ''; document.getElementById('update-student').value = ''; document.getElementById('update-category').value = ''; window.customFields.forEach((f, idx) => { const el = document.getElementById(`custom-field-${idx}`); if (el) el.value = ''; });
+            window.handleCategoryChange(); alert(`Saved! ${pointsVal} points for ${window.houseConfig[houseId].name}.`);
+        };
 
-        // --- HOME PAGE RENDERING ---
-        function renderHome() {
-            // Overall Standings
-            const scores = calculateCurrentScores();
-            const ranks = getHouseRanks(scores);
-            drawPieChart(scores);
-
+        window.renderHome = function () {
+            const scores = window.calculateCurrentScores(); const ranks = window.getHouseRanks(scores); window.drawPieChart(scores);
             const lbContainer = document.getElementById('leaderboard-container'); lbContainer.innerHTML = '';
             Object.entries(scores).sort((a, b) => b[1] - a[1]).forEach(([houseId, score]) => {
-                const config = houseConfig[houseId]; const rankData = ranks[houseId];
-                const item = document.createElement('div'); item.className = 'leaderboard-item'; item.style.backgroundColor = config.color; item.setAttribute('data-house', houseId); item.onclick = () => showHouseDetails(houseId); 
+                const config = window.houseConfig[houseId]; const rankData = ranks[houseId];
+                const item = document.createElement('div'); item.className = 'leaderboard-item'; item.style.backgroundColor = config.color; item.setAttribute('data-house', houseId); item.onclick = () => window.showHouseDetails(houseId);
                 let displayName = config.name; if (rankData.isLeader) { item.classList.add('is-leader'); displayName += ' 👑'; }
-                item.innerHTML = `<span>#${rankData.position} ${displayName}</span><span>${score} pts</span>`;
-                lbContainer.appendChild(item);
+                item.innerHTML = `<span>#${rankData.position} ${displayName}</span><span>${score} pts</span>`; lbContainer.appendChild(item);
             });
-
-            // Weekly Standings
-            const weeklyScores = calculateWeeklyScores();
-            const weeklyRanks = getHouseRanks(weeklyScores);
-            
+            const weeklyScores = window.calculateWeeklyScores(); const weeklyRanks = window.getHouseRanks(weeklyScores);
             const wlbContainer = document.getElementById('weekly-leaderboard-container'); wlbContainer.innerHTML = '';
             Object.entries(weeklyScores).sort((a, b) => b[1] - a[1]).forEach(([houseId, score]) => {
-                const config = houseConfig[houseId]; const rankData = weeklyRanks[houseId];
-                const item = document.createElement('div'); item.className = 'leaderboard-item'; item.style.backgroundColor = config.color; item.setAttribute('data-house', houseId); item.onclick = () => showHouseDetails(houseId); 
+                const config = window.houseConfig[houseId]; const rankData = weeklyRanks[houseId];
+                const item = document.createElement('div'); item.className = 'leaderboard-item'; item.style.backgroundColor = config.color; item.setAttribute('data-house', houseId); item.onclick = () => window.showHouseDetails(houseId);
                 let displayName = config.name; if (rankData.isLeader) { item.classList.add('is-leader'); displayName += ' ⭐'; }
-                item.innerHTML = `<span>#${rankData.position} ${displayName}</span><span>${score} pts</span>`;
-                wlbContainer.appendChild(item);
+                item.innerHTML = `<span>#${rankData.position} ${displayName}</span><span>${score} pts</span>`; wlbContainer.appendChild(item);
             });
-        }
+        };
 
-        // --- DETAILS PAGE LOGIC ---
-        function showHouseDetails(houseId) {
-            const config = houseConfig[houseId]; const scores = calculateCurrentScores(); const ranks = getHouseRanks(scores); const rankData = ranks[houseId];
+        window.showHouseDetails = function (houseId) {
+            window.activeHouseView = houseId;
+            const config = window.houseConfig[houseId]; const scores = window.calculateCurrentScores(); const ranks = window.getHouseRanks(scores); const rankData = ranks[houseId];
             document.getElementById('detail-name').textContent = config.name; document.getElementById('detail-name').style.color = config.color; document.getElementById('detail-logo').src = config.img; document.getElementById('detail-position').textContent = `Position: #${rankData.position} (${rankData.score} pts)`;
 
-            const houseLogs = actionLogs.filter(l => l.house === houseId).sort((a, b) => b.timestamp - a.timestamp);
-            
+            const houseLogs = window.actionLogs.filter(l => l.house === houseId).sort((a, b) => b.timestamp - a.timestamp);
             const buildDynamicTable = (logs, isCompTable) => {
-                let html = '<thead><tr>';
-                html += `<th>${formLabels.date.replace(':', '')}</th><th>${formLabels.student.replace(/ \(.*\)/, '')}</th>`;
-                if(isCompTable) html += `<th>${formLabels.competition.replace('Select ', '').replace(':', '')}</th>`;
-                html += `<th>${formLabels.points.replace(':', '')}</th>`;
-                customFields.forEach(cf => { html += `<th>${cf.name}</th>`; }); 
-                html += `<th>Authorised By</th></tr></thead><tbody>`;
-
-                if(logs.length === 0) { 
-                    const colSpan = (isCompTable ? 5 : 4) + customFields.length; html += `<tr><td colspan="${colSpan}" style="text-align:center;">No records found.</td></tr>`; 
+                let html = '<thead><tr>'; html += `<th>${window.formLabels.date.replace(':', '')}</th><th>${window.formLabels.student.replace(/ \(.*\)/, '')}</th>`;
+                if (isCompTable) html += `<th>${window.formLabels.competition.replace('Select ', '').replace(':', '')}</th>`;
+                html += `<th>${window.formLabels.points.replace(':', '')}</th>`; window.customFields.forEach(cf => { html += `<th>${cf.name}</th>`; }); html += `<th>Authorised By</th></tr></thead><tbody>`;
+                if (logs.length === 0) {
+                    const colSpan = (isCompTable ? 5 : 4) + window.customFields.length; html += `<tr><td colspan="${colSpan}" style="text-align:center;">No records found.</td></tr>`;
                 } else {
                     logs.forEach(log => {
                         const ptsClass = log.points >= 0 ? 'pos-points' : 'neg-points'; const ptsDisplay = log.points > 0 ? `+${log.points}` : log.points;
-                        let authText = log.author; if(log.editedBy) { authText = `${log.author} <br><small style="color:#666;">Edited by: ${log.editedBy}</small>`; }
-                        
-                        // Handle Date formatting specifically for custom date fields
-                        html += `<tr><td>${log.date}</td><td>${log.student}</td>`;
-                        if(isCompTable) html += `<td>${log.subCategory}</td>`;
-                        html += `<td class="${ptsClass}">${ptsDisplay}</td>`;
-                        
-                        customFields.forEach(cf => { 
+                        let authText = log.author; if (log.editedBy) { authText = `${log.author} <br><small style="color:#666;">Edited by: ${log.editedBy}</small>`; }
+                        html += `<tr><td>${log.date}</td><td>${log.student}</td>`; if (isCompTable) html += `<td>${log.subCategory}</td>`; html += `<td class="${ptsClass}">${ptsDisplay}</td>`;
+                        window.customFields.forEach(cf => {
                             let val = log.customData && log.customData[cf.name] ? log.customData[cf.name] : '-';
-                            if (cf.type === 'date' && val !== '-' && val.includes('-')) {
-                                let p = val.split('-'); val = `${p[2]}/${p[1]}/${p[0]}`; // Convert YYYY-MM-DD to DD/MM/YYYY
-                            }
-                            html += `<td>${val}</td>`; 
-                        });
-                        html += `<td>${authText}</td></tr>`;
+                            if (cf.type === 'date' && val !== '-' && val.includes('-')) { let p = val.split('-'); val = `${p[2]}/${p[1]}/${p[0]}`; }
+                            html += `<td>${val}</td>`;
+                        }); html += `<td>${authText}</td></tr>`;
                     });
-                }
-                return html + '</tbody>';
+                } return html + '</tbody>';
             };
-
             document.getElementById('detail-discipline-table').innerHTML = buildDynamicTable(houseLogs.filter(l => l.category.toLowerCase().includes('discipline')), false);
             document.getElementById('detail-late-table').innerHTML = buildDynamicTable(houseLogs.filter(l => l.category.toLowerCase().includes('late')), false);
             document.getElementById('detail-comp-table').innerHTML = buildDynamicTable(houseLogs.filter(l => l.category.toLowerCase().includes('competition')), true);
-            toggleView('details-view');
-        }
+            window.toggleView('details-view');
+        };
 
-        // --- CANVAS LOGIC ---
-        const canvas = document.getElementById('pieChart'); const ctx = canvas.getContext('2d'); let currentSlices = []; 
-        function drawPieChart(scores) {
+        const canvas = document.getElementById('pieChart'); const ctx = canvas.getContext('2d'); window.currentSlices = [];
+        window.drawPieChart = function (scores) {
             const totalPoints = Object.values(scores).reduce((a, b) => a + b, 0); const msgEl = document.getElementById('no-data-msg');
-            currentSlices = []; ctx.clearRect(0, 0, canvas.width, canvas.height);
-            if (totalPoints === 0) { ctx.beginPath(); ctx.arc(canvas.width/2, canvas.height/2, canvas.width/2, 0, 2 * Math.PI); ctx.fillStyle = '#ddd'; ctx.fill(); msgEl.style.display = 'block'; return; }
+            window.currentSlices = []; ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (totalPoints === 0) { ctx.beginPath(); ctx.arc(canvas.width / 2, canvas.height / 2, canvas.width / 2, 0, 2 * Math.PI); ctx.fillStyle = '#ddd'; ctx.fill(); msgEl.style.display = 'block'; return; }
             msgEl.style.display = 'none'; let startAngle = 0; const centerX = canvas.width / 2; const centerY = canvas.height / 2;
             for (const house in scores) {
                 if (scores[house] === 0) continue;
                 const sliceAngle = (scores[house] / totalPoints) * 2 * Math.PI; const endAngle = startAngle + sliceAngle;
-                currentSlices.push({ house: house, start: startAngle, end: endAngle });
-                ctx.beginPath(); ctx.moveTo(centerX, centerY); ctx.arc(centerX, centerY, centerX, startAngle, endAngle); ctx.fillStyle = houseConfig[house].color; ctx.fill();
+                window.currentSlices.push({ house: house, start: startAngle, end: endAngle });
+                ctx.beginPath(); ctx.moveTo(centerX, centerY); ctx.arc(centerX, centerY, centerX, startAngle, endAngle); ctx.fillStyle = window.houseConfig[house].color; ctx.fill();
                 const percentage = ((scores[house] / totalPoints) * 100).toFixed(1) + '%'; const midAngle = startAngle + (sliceAngle / 2);
                 const textRadius = (canvas.width / 2) * 0.6; const textX = centerX + textRadius * Math.cos(midAngle); const textY = centerY + textRadius * Math.sin(midAngle);
                 ctx.fillStyle = house === 'unicorn' ? '#333' : '#fff'; ctx.font = 'bold 13px Arial'; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
-                ctx.shadowColor = house === 'unicorn' ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 4; ctx.fillText(percentage, textX, textY); ctx.shadowBlur = 0;
-                startAngle += sliceAngle;
+                ctx.shadowColor = house === 'unicorn' ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.5)'; ctx.shadowBlur = 4; ctx.fillText(percentage, textX, textY); ctx.shadowBlur = 0; startAngle += sliceAngle;
             }
-        }
-        canvas.addEventListener('click', function(event) {
+        };
+        canvas.addEventListener('click', function (event) {
             const rect = canvas.getBoundingClientRect(); const x = event.clientX - rect.left - (canvas.width / 2); const y = event.clientY - rect.top - (canvas.height / 2);
             let clickAngle = Math.atan2(y, x); if (clickAngle < 0) clickAngle += 2 * Math.PI;
-            for (let slice of currentSlices) { if (clickAngle >= slice.start && clickAngle <= slice.end) { showHouseDetails(slice.house); break; } }
+            for (let slice of window.currentSlices) { if (clickAngle >= slice.start && clickAngle <= slice.end) { window.showHouseDetails(slice.house); break; } }
         });
 
-        // --- FULL HISTORY LOGIC ---
-        function renderHistory() {
+        window.renderHistory = function () {
             const table = document.getElementById('history-table');
-            let html = `<thead><tr><th>${formLabels.date.replace(':', '')}</th><th>${formLabels.house.replace('Select ', '').replace(':', '')}</th><th>${formLabels.student.replace(/ \(.*\)/, '')}</th><th>${formLabels.points.replace(':', '')}</th><th>${formLabels.category.replace(/ \(.*\)/, '')}</th>`;
-            customFields.forEach(cf => { html += `<th>${cf.name}</th>`; });
-            html += `<th>Authorised By</th><th>Manage</th></tr></thead><tbody>`;
+            let html = `<thead><tr><th>${window.formLabels.date.replace(':', '')}</th><th>${window.formLabels.house.replace('Select ', '').replace(':', '')}</th><th>${window.formLabels.student.replace(/ \(.*\)/, '')}</th><th>${window.formLabels.points.replace(':', '')}</th><th>${window.formLabels.category.replace(/ \(.*\)/, '')}</th>`;
+            window.customFields.forEach(cf => { html += `<th>${cf.name}</th>`; }); html += `<th>Authorised By</th><th>Manage</th></tr></thead><tbody>`;
 
-            if (actionLogs.length === 0) { 
-                const colSpan = 7 + customFields.length; html += `<tr><td colspan="${colSpan}" style="text-align:center;">No history recorded.</td></tr>`; 
+            if (window.actionLogs.length === 0) {
+                const colSpan = 7 + window.customFields.length; html += `<tr><td colspan="${colSpan}" style="text-align:center;">No history recorded.</td></tr>`;
             } else {
-                const displayLogs = [...actionLogs].sort((a, b) => b.timestamp - a.timestamp);
+                const displayLogs = [...window.actionLogs].sort((a, b) => b.timestamp - a.timestamp);
                 displayLogs.forEach(log => {
-                    if(log.house === 'system') {
-                        const colSpan = 7 + customFields.length;
-                        html += `<tr style="background-color: #ffebee;"><td>${log.date}</td><td colspan="${colSpan - 2}" style="color: #c62828; font-weight: bold;">⚠️ SYSTEM LOG: ${log.subCategory}</td><td>${log.author}</td></tr>`;
-                        return; 
+                    if (log.house === 'system') {
+                        const colSpan = 7 + window.customFields.length;
+                        html += `<tr style="background-color: #ffebee;"><td>${log.date}</td><td colspan="${colSpan - 2}" style="color: #c62828; font-weight: bold;">⚠️ SYSTEM LOG: ${log.subCategory}</td><td>${log.author}</td></tr>`; return;
                     }
                     const pointsClass = log.points >= 0 ? 'pos-points' : 'neg-points'; const pointsDisplay = log.points > 0 ? `+${log.points}` : log.points;
                     const fullCategoryDesc = log.subCategory ? `${log.category} - ${log.subCategory}` : log.category;
-                    let authText = log.author || 'Unknown'; if(log.editedBy) { authText += `<br><small style="color:#666;">Edited by: ${log.editedBy}</small>`; }
-
-                    html += `<tr><td>${log.date}</td><td style="color: ${houseConfig[log.house].color}; font-weight: bold;">${houseConfig[log.house].name}</td><td>${log.student}</td><td class="${pointsClass}">${pointsDisplay}</td><td>${fullCategoryDesc}</td>`;
-                    customFields.forEach(cf => { 
+                    let authText = log.author || 'Unknown'; if (log.editedBy) { authText += `<br><small style="color:#666;">Edited by: ${log.editedBy}</small>`; }
+                    html += `<tr><td>${log.date}</td><td style="color: ${window.houseConfig[log.house].color}; font-weight: bold;">${window.houseConfig[log.house].name}</td><td>${log.student}</td><td class="${pointsClass}">${pointsDisplay}</td><td>${fullCategoryDesc}</td>`;
+                    window.customFields.forEach(cf => {
                         let val = log.customData && log.customData[cf.name] ? log.customData[cf.name] : '-';
-                        if (cf.type === 'date' && val !== '-' && val.includes('-')) {
-                            let p = val.split('-'); val = `${p[2]}/${p[1]}/${p[0]}`; 
-                        }
-                        html += `<td>${val}</td>`; 
+                        if (cf.type === 'date' && val !== '-' && val.includes('-')) { let p = val.split('-'); val = `${p[2]}/${p[1]}/${p[0]}`; } html += `<td>${val}</td>`;
                     });
                     html += `<td>${authText}</td><td><button class="btn btn-small btn-edit" onclick="openEditModal(${log.id})">Edit</button><button class="btn btn-small btn-delete" onclick="deleteLog(${log.id})">Del</button></td></tr>`;
                 });
-            }
-            table.innerHTML = html + '</tbody>';
-        }
+            } table.innerHTML = html + '</tbody>';
+        };
 
-        function openEditModal(logId) {
-            if (!currentUser) return;
-            const log = actionLogs.find(l => l.id === logId); if (!log) return;
+        window.openEditModal = function (logId) {
+            if (!window.currentUser) return;
+            const log = window.actionLogs.find(l => l.id === logId); if (!log) return;
             document.getElementById('edit-id').value = log.id; document.getElementById('edit-points').value = log.points; document.getElementById('edit-modal').style.display = 'flex';
-        }
+        };
 
-        function saveEdit() {
+        window.saveEdit = function () {
             const id = parseInt(document.getElementById('edit-id').value); const newPoints = parseInt(document.getElementById('edit-points').value);
             if (isNaN(newPoints) || newPoints === 0) { alert("Points cannot be 0 or empty."); return; }
-            const logIndex = actionLogs.findIndex(l => l.id === id);
-            if (logIndex !== -1) { actionLogs[logIndex].points = newPoints; actionLogs[logIndex].editedBy = currentUser.name; closeModal('edit-modal'); renderHistory(); }
-        }
+            window.updateLogPointsFirebase(id, newPoints, window.currentUser.name); window.closeModal('edit-modal');
+        };
 
-        function deleteLog(logId) {
-            if (!currentUser) return;
-            if(confirm("Are you sure you want to delete this record? This will recalculate the scores.")) { 
-                if(confirm("FINAL WARNING: Are you absolutely sure? This action cannot be undone.")) { actionLogs = actionLogs.filter(l => l.id !== logId); renderHistory(); }
+        window.deleteLog = function (logId) {
+            if (!window.currentUser) return;
+            if (confirm("Are you sure you want to delete this record? This will recalculate the scores.")) {
+                if (confirm("FINAL WARNING: Are you absolutely sure? This action cannot be undone.")) { window.deleteLogFromFirebase(logId); }
             }
-        }
+        };
 
-        // --- USER MANAGEMENT LOGIC (ADMIN ONLY) ---
-        function renderUsers() {
+        window.renderUsers = function () {
             const tbody = document.getElementById('users-table-body'); tbody.innerHTML = '';
-            appUsers.forEach(user => {
+            window.appUsers.forEach(user => {
                 const tr = document.createElement('tr');
-                tr.innerHTML = `<td>${user.name}</td><td>${user.initial}</td><td>${user.username}</td><td>${user.role}</td><td><button class="btn btn-small btn-edit" onclick="openUserModal(${user.id})">Edit</button>${user.username !== 'admin' ? `<button class="btn btn-small btn-delete" onclick="deleteUser(${user.id})">Del</button>` : ''}</td>`;
+                tr.innerHTML = `<td>${user.name}</td><td>${user.initial}</td><td>${user.username}</td><td>${user.role}</td><td><button class="btn btn-small btn-edit" onclick="openUserModal('${user.id}')">Edit</button>${user.username !== 'admin' ? `<button class="btn btn-small btn-delete" onclick="deleteUser('${user.id}')">Del</button>` : ''}</td>`;
                 tbody.appendChild(tr);
             });
-        }
+        };
 
-        function openUserModal(userId = null) {
+        window.openUserModal = function (userId = null) {
             document.getElementById('user-pwd-btn').textContent = '👁️'; document.getElementById('user-password').type = 'password';
             if (userId) {
-                const user = appUsers.find(u => u.id === userId); document.getElementById('user-modal-title').textContent = 'Edit User'; document.getElementById('user-edit-id').value = user.id; document.getElementById('user-name').value = user.name; document.getElementById('user-initial').value = user.initial; document.getElementById('user-username').value = user.username; document.getElementById('user-password').value = user.password; document.getElementById('user-role').value = user.role;
-                if(user.username === 'admin') { document.getElementById('user-username').disabled = true; document.getElementById('user-role').disabled = true; } else { document.getElementById('user-username').disabled = false; document.getElementById('user-role').disabled = false; }
+                const user = window.appUsers.find(u => u.id == userId); document.getElementById('user-modal-title').textContent = 'Edit User'; document.getElementById('user-edit-id').value = user.id; document.getElementById('user-name').value = user.name; document.getElementById('user-initial').value = user.initial; document.getElementById('user-username').value = user.username; document.getElementById('user-password').value = user.password; document.getElementById('user-role').value = user.role;
+                if (user.username === 'admin') { document.getElementById('user-username').disabled = true; document.getElementById('user-role').disabled = true; } else { document.getElementById('user-username').disabled = false; document.getElementById('user-role').disabled = false; }
             } else {
                 document.getElementById('user-modal-title').textContent = 'Add New User'; document.getElementById('user-edit-id').value = ''; document.getElementById('user-name').value = ''; document.getElementById('user-initial').value = ''; document.getElementById('user-username').value = ''; document.getElementById('user-password').value = ''; document.getElementById('user-role').value = 'Manager'; document.getElementById('user-username').disabled = false; document.getElementById('user-role').disabled = false;
-            }
-            document.getElementById('user-modal').style.display = 'flex';
-        }
+            } document.getElementById('user-modal').style.display = 'flex';
+        };
 
-        function saveUser() {
+        window.saveUser = function () {
             const id = document.getElementById('user-edit-id').value; const name = document.getElementById('user-name').value.trim(); const initial = document.getElementById('user-initial').value.trim(); const username = document.getElementById('user-username').value.trim(); const password = document.getElementById('user-password').value; const role = document.getElementById('user-role').value;
-            if(!name || !initial || !username || !password) { alert("All fields are required."); return; }
+            if (!name || !initial || !username || !password) { alert("All fields are required."); return; }
             if (id) {
-                const index = appUsers.findIndex(u => u.id == id);
-                if(appUsers.some(u => u.username === username && u.id != id)) { alert("Username already exists!"); return; }
-                appUsers[index].name = name; appUsers[index].initial = initial;
-                if(appUsers[index].username !== 'admin') { appUsers[index].username = username; appUsers[index].role = role; }
-                appUsers[index].password = password;
+                const index = window.appUsers.findIndex(u => u.id == id);
+                if (window.appUsers.some(u => u.username === username && u.id != id)) { alert("Username already exists!"); return; }
+                const userObj = { id: id, name, initial, username, password, role };
+                window.syncUserToFirebase(userObj);
             } else {
-                if(appUsers.some(u => u.username === username)) { alert("Username already exists!"); return; }
-                appUsers.push({ id: Date.now(), name, initial, username, password, role });
-            }
-            closeModal('user-modal'); renderUsers(); alert("User saved successfully.");
-        }
+                if (window.appUsers.some(u => u.username === username)) { alert("Username already exists!"); return; }
+                const userObj = { id: Date.now().toString(), name, initial, username, password, role };
+                window.syncUserToFirebase(userObj);
+            } window.closeModal('user-modal'); alert("User saved successfully.");
+        };
 
-        function deleteUser(userId) {
-            const user = appUsers.find(u => u.id === userId);
+        window.deleteUser = function (userId) {
+            const user = window.appUsers.find(u => u.id == userId);
             if (user.username === 'admin') { alert("Cannot delete the master admin."); return; }
-            if (confirm(`Are you sure you want to remove the user: ${user.name}?`)) { 
-                if (confirm(`FINAL WARNING: Are you absolutely certain you want to permanently delete user ${user.name}?`)) { 
-                    appUsers = appUsers.filter(u => u.id !== userId); logSystemAction(`Deleted User Account: ${user.name} (${user.username})`); renderUsers(); 
+            if (confirm(`Are you sure you want to remove the user: ${user.name}?`)) {
+                if (confirm(`FINAL WARNING: Are you absolutely certain you want to permanently delete user ${user.name}?`)) {
+                    window.deleteUserFromFirebase(userId); window.logSystemAction(`Deleted User Account: ${user.name} (${user.username})`);
                 }
             }
-        }
+        };
 
-        // Initialize App
-        populateUpdateForm(); renderHome();
+        // Fallback UI initialization if Firebase doesn't load immediately
+        window.populateUpdateForm();
+        window.renderHome();
+
+
     </script>
+
 </body>
+
 </html>
